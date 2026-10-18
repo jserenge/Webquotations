@@ -7,7 +7,7 @@ window.SITE = {
     bio: "I design and engineer disciplined, high-converting digital flagships for leading businesses and founders in Kenya and beyond. Built with uncompromising typographic restraint, sub-second performance, and quiet luxury.",
     location: "Nairobi, Kenya",
     status: "Accepting select commissions for Q4 2026 / Q1 2027",
-    whatsapp: "254700000000", // International format without '+' or spaces
+    whatsapp: "254708236755", // International format without '+' or spaces
     email: "jeremyserenge@gmail.com",
     github: "https://github.com/jserenge/Webquotations"
   },

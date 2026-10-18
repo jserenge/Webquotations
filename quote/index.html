@@ -365,7 +365,7 @@
       cachedSummaryText = message;
 
       // WhatsApp Link
-      const waNumber = S.me.whatsapp || '';
+      const waNumber = (S.me.whatsapp || '').toString().replace(/[^0-9]/g, '');
       document.getElementById('btn-whatsapp').href = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
 
       // Email Link
