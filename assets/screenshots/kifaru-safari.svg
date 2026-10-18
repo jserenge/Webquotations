@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="safariBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EBE7DE" />
+      <stop offset="100%" stop-color="#DCD6C7" />
+    </linearGradient>
+    <filter id="safariShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#2D281F" flood-opacity="0.14" />
+    </filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#safariBg)" />
+  <line x1="60" y1="0" x2="60" y2="600" stroke="#CBC4B2" stroke-width="1" />
+  <line x1="740" y1="0" x2="740" y2="600" stroke="#CBC4B2" stroke-width="1" />
+  
+  <g transform="translate(100, 80)" filter="url(#safariShadow)">
+    <rect width="600" height="440" rx="12" fill="#FAF8F5" stroke="#E3DDD1" />
+    <path d="M 0 12 Q 0 0 12 0 L 588 0 Q 600 0 600 12 L 600 48 L 0 48 Z" fill="#F2EFE9" stroke="#E3DDD1" stroke-width="1" />
+    <circle cx="28" cy="24" r="5" fill="#D36B58" />
+    <circle cx="44" cy="24" r="5" fill="#DDB66B" />
+    <circle cx="60" cy="24" r="5" fill="#88A37E" />
+    <rect x="180" y="14" width="240" height="20" rx="4" fill="#E6E1D5" />
+    <text x="300" y="28" font-family="-apple-system, sans-serif" font-size="10" fill="#756E5E" text-anchor="middle">kifarusafari.co.ke</text>
+    
+    <!-- Safari Content -->
+    <rect x="0" y="48" width="600" height="392" fill="#FAF8F5" />
+    <text x="36" y="84" font-family="'Playfair Display', Georgia, serif" font-size="20" font-weight="700" fill="#3D3220">KIFARU</text>
+    <text x="130" y="82" font-family="'JetBrains Mono', monospace" font-size="10" fill="#8C7F6C" letter-spacing="2">CONSERVANCY &amp; EXPEDITIONS</text>
+    
+    <text x="36" y="150" font-family="'Playfair Display', Georgia, serif" font-size="34" font-weight="600" fill="#2E2618">The Great Migration,</text>
+    <text x="36" y="188" font-family="'Playfair Display', Georgia, serif" font-size="34" font-weight="600" font-style="italic" fill="#82522C">Curated in Silence.</text>
+    <text x="36" y="222" font-family="-apple-system, sans-serif" font-size="12" fill="#695E4D">Private chartered fly-in camps across the Maasai Mara ecosystem.</text>
+    
+    <g transform="translate(36, 260)">
+      <rect width="165" height="150" rx="8" fill="#F0ECE1" stroke="#E3DDD1" />
+      <text x="16" y="32" font-family="'JetBrains Mono', monospace" font-size="10" fill="#82522C">01 / MARA</text>
+      <text x="16" y="60" font-family="'Playfair Display', serif" font-size="15" font-weight="600" fill="#2E2618">Private Tented Camp</text>
+      <text x="16" y="80" font-family="sans-serif" font-size="11" fill="#756E5E">7 Days • Mara Triangle</text>
+      <text x="16" y="125" font-family="sans-serif" font-size="11" font-weight="700" fill="#82522C">From $4,200 pp</text>
+    </g>
+    <g transform="translate(216, 260)">
+      <rect width="165" height="150" rx="8" fill="#F0ECE1" stroke="#E3DDD1" />
+      <text x="16" y="32" font-family="'JetBrains Mono', monospace" font-size="10" fill="#82522C">02 / LAIKIPIA</text>
+      <text x="16" y="60" font-family="'Playfair Display', serif" font-size="15" font-weight="600" fill="#2E2618">Rhino Sanctuary Villa</text>
+      <text x="16" y="80" font-family="sans-serif" font-size="11" fill="#756E5E">5 Days • Lewa Wildlife</text>
+      <text x="16" y="125" font-family="sans-serif" font-size="11" font-weight="700" fill="#82522C">From $3,600 pp</text>
+    </g>
+    <g transform="translate(396, 260)">
+      <rect width="165" height="150" rx="8" fill="#F0ECE1" stroke="#E3DDD1" />
+      <text x="16" y="32" font-family="'JetBrains Mono', monospace" font-size="10" fill="#82522C">03 / AMBOSELI</text>
+      <text x="16" y="60" font-family="'Playfair Display', serif" font-size="15" font-weight="600" fill="#2E2618">Kilimanjaro Vista</text>
+      <text x="16" y="80" font-family="sans-serif" font-size="11" fill="#756E5E">4 Days • Elephant corridor</text>
+      <text x="16" y="125" font-family="sans-serif" font-size="11" font-weight="700" fill="#82522C">From $2,800 pp</text>
+    </g>
+  </g>
+  <text x="100" y="555" font-family="'JetBrains Mono', monospace" font-size="11" fill="#756E5E" letter-spacing="2">CONCEPT 03 // BESPOKE EXPEDITIONS</text>
+</svg>

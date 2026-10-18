@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="tbBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141413" />
+      <stop offset="100%" stop-color="#21201D" />
+    </linearGradient>
+    <filter id="phoneShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="20" stdDeviation="30" flood-color="#000000" flood-opacity="0.45" />
+    </filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#tbBg)" />
+  <!-- Editorial Grid Line -->
+  <line x1="60" y1="0" x2="60" y2="600" stroke="#33322E" stroke-width="1" />
+  <line x1="740" y1="0" x2="740" y2="600" stroke="#33322E" stroke-width="1" />
+  
+  <!-- Left Side: Editorial Typography -->
+  <g transform="translate(100, 180)">
+    <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D4AF37" letter-spacing="3">CASE STUDY // MOBILE COMMERCE</text>
+    <text x="0" y="50" font-family="'Playfair Display', Georgia, serif" font-size="44" font-weight="700" fill="#FFFFFF">True Barbers</text>
+    <text x="0" y="95" font-family="'Playfair Display', Georgia, serif" font-size="28" font-style="italic" fill="#A8A59E">Nairobi Gentlemen's Lounge</text>
+    <text x="0" y="145" font-family="-apple-system, sans-serif" font-size="14" fill="#88847C" width="300">Appointment scheduling, VIP loyalty tier &amp; multi-branch booking.</text>
+    
+    <rect x="0" y="180" width="150" height="42" rx="4" fill="#D4AF37" />
+    <text x="75" y="206" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" fill="#141413" text-anchor="middle">LAUNCH DEMO</text>
+    
+    <text x="0" y="260" font-family="'JetBrains Mono', monospace" font-size="11" fill="#66635D">WESTLANDS • KILIMANI • NAIROBI</text>
+  </g>
+  
+  <!-- Right Side: Mobile Device Mockup -->
+  <g transform="translate(480, 50)" filter="url(#phoneShadow)">
+    <!-- Device Frame -->
+    <rect width="250" height="500" rx="36" fill="#1E1E1C" stroke="#3A3834" stroke-width="4" />
+    <!-- Screen -->
+    <rect x="8" y="8" width="234" height="484" rx="30" fill="#0E0E0D" />
+    <!-- Dynamic Island / Notch -->
+    <rect x="85" y="16" width="80" height="18" rx="9" fill="#000" />
+    
+    <!-- Mobile Screen Content -->
+    <g transform="translate(24, 52)">
+      <!-- Top Bar -->
+      <text x="0" y="16" font-family="'Playfair Display', Georgia, serif" font-size="16" font-weight="700" fill="#D4AF37">TRUE</text>
+      <circle cx="195" cy="12" r="10" fill="#252522" />
+      <text x="195" y="16" font-family="sans-serif" font-size="10" fill="#FFF" text-anchor="middle">☰</text>
+      
+      <!-- Hero In Phone -->
+      <rect x="0" y="32" width="202" height="140" rx="12" fill="#1B1A17" stroke="#2B2A26" />
+      <text x="16" y="70" font-family="'Playfair Display', serif" font-size="18" font-weight="600" fill="#FFF">Precision Cut</text>
+      <text x="16" y="92" font-family="'Playfair Display', serif" font-size="18" font-style="italic" fill="#D4AF37">&amp; Hot Towel.</text>
+      <text x="16" y="115" font-family="sans-serif" font-size="10" fill="#888">Master barbers. Quiet luxury.</text>
+      <rect x="16" y="130" width="100" height="26" rx="13" fill="#D4AF37" />
+      <text x="66" y="147" font-family="sans-serif" font-size="9" font-weight="700" fill="#0E0E0D" text-anchor="middle">Book Seat</text>
+      
+      <!-- Service Items -->
+      <text x="0" y="200" font-family="'JetBrains Mono', monospace" font-size="9" fill="#666" letter-spacing="1">SELECT SERVICE</text>
+      
+      <rect x="0" y="215" width="202" height="52" rx="8" fill="#161513" stroke="#252420" />
+      <text x="12" y="238" font-family="sans-serif" font-size="11" font-weight="600" fill="#FFF">Executive Shave</text>
+      <text x="12" y="254" font-family="sans-serif" font-size="9" fill="#777">45 min • Hot towel treatment</text>
+      <text x="190" y="244" font-family="sans-serif" font-size="11" font-weight="700" fill="#D4AF37" text-anchor="end">KES 2,500</text>
+      
+      <rect x="0" y="275" width="202" height="52" rx="8" fill="#161513" stroke="#252420" />
+      <text x="12" y="298" font-family="sans-serif" font-size="11" font-weight="600" fill="#FFF">Beard Sculpt &amp; Fade</text>
+      <text x="12" y="314" font-family="sans-serif" font-size="9" fill="#777">30 min • Razor edge finish</text>
+      <text x="190" y="304" font-family="sans-serif" font-size="11" font-weight="700" fill="#D4AF37" text-anchor="end">KES 1,800</text>
+      
+      <rect x="0" y="340" width="202" height="42" rx="21" fill="#D4AF37" />
+      <text x="101" y="366" font-family="sans-serif" font-size="11" font-weight="700" fill="#000" text-anchor="middle">Choose Barber &amp; Time →</text>
+    </g>
+  </g>
+</svg>

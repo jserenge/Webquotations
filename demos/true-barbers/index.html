@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>True Barbers | Nairobi Gentlemen's Lounge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0D0E0E;
+      --surface: #141616;
+      --card: #1A1D1C;
+      --gold: #D4AF37;
+      --gold-light: #F3E5AB;
+      --text: #F5F4F0;
+      --muted: #959892;
+      --border: #292E2C;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      background: rgba(13, 14, 14, 0.85);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .locations-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: #0D0E0E;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: all 0.2s ease;
+      display: inline-block;
+    }
+    .btn-gold:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+    .hero {
+      padding: 72px 24px 48px;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .hero-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--gold);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.2rem, 6vw, 3.8rem);
+      line-height: 1.15;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      max-width: 580px;
+      margin: 0 auto 32px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px;
+      transition: border-color 0.2s;
+    }
+    .card:hover {
+      border-color: var(--gold);
+    }
+    .card-num {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .card h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 0.85rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+    .card-price {
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+    .branch-bar {
+      max-width: 1100px;
+      margin: 48px auto;
+      padding: 32px 24px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 32px;
+    }
+    .branch h4 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+    }
+    .branch p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <div id="cd" style="position:fixed;top:6px;left:50%;transform:translateX(-50%);z-index:99999;background:#000c;color:#fff;font:12px system-ui;padding:4px 12px;border-radius:99px;border:1px solid #333;">Concept Demo</div>
+  
+  <header class="header">
+    <div class="brand">True Barbers</div>
+    <div class="locations-tag">WESTLANDS • KILIMANI</div>
+    <a href="#book" class="btn-gold" onclick="alert('Demo: Online booking integration is simulated for this concept preview.'); return false;">Book Lounge</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="hero-tag">Master Grooming &amp; Lounge</span>
+      <h1>Precision Cut.<br><span style="color:var(--gold); font-style:italic;">Quiet Luxury.</span></h1>
+      <p>A contemporary sanctuary for discerning gentlemen. Traditional hot towel precision meets bespoke contemporary styling in Nairobi.</p>
+      <a href="#services" class="btn-gold">Explore Services &amp; Rates</a>
+    </section>
+
+    <section id="services" class="grid">
+      <div class="card">
+        <div class="card-num">SERVICE 01</div>
+        <h3>The Executive Cut</h3>
+        <div class="card-meta">
+          <span>45 Minutes</span>
+          <span class="card-price">KES 2,500</span>
+        </div>
+        <p>Tailored scissor cut, razor edge finish, scalp massage, and organic cedarwood finishing oil.</p>
+        <button class="btn-gold" style="width:100%;" onclick="alert('Demo: Appointment booking selected for Executive Cut.');">Select Service</button>
+      </div>
+
+      <div class="card">
+        <div class="card-num">SERVICE 02</div>
+        <h3>Royal Hot Towel Shave</h3>
+        <div class="card-meta">
+          <span>40 Minutes</span>
+          <span class="card-price">KES 2,000</span>
+        </div>
+        <p>Pre-shave eucalyptus steam, triple hot towel wrap, straight razor shave, and soothing sandalwood balm.</p>
+        <button class="btn-gold" style="width:100%;" onclick="alert('Demo: Appointment booking selected for Royal Shave.');">Select Service</button>
+      </div>
+
+      <div class="card">
+        <div class="card-num">SERVICE 03</div>
+        <h3>Beard Architecture</h3>
+        <div class="card-meta">
+          <span>35 Minutes</span>
+          <span class="card-price">KES 1,800</span>
+        </div>
+        <p>Geometric beard sculpting, cheek line definition, nourishing shea butter treatment, and hot comb taper.</p>
+        <button class="btn-gold" style="width:100%;" onclick="alert('Demo: Appointment booking selected for Beard Architecture.');">Select Service</button>
+      </div>
+    </section>
+
+    <section class="branch-bar">
+      <div class="branch">
+        <h4>Westlands Lounge</h4>
+        <p>Delta Corner Tower, 4th Floor<br>Daily 8:00 AM – 9:00 PM</p>
+      </div>
+      <div class="branch">
+        <h4>Kilimani Lounge</h4>
+        <p>Adlife Plaza, Ground Wing<br>Daily 8:30 AM – 9:30 PM</p>
+      </div>
+      <div class="branch">
+        <h4>Private VIP Valet</h4>
+        <p>Private grooming suites available<br>By advance reservation only</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 True Barbers Nairobi. Concept preview prepared for portfolio review.</p>
+  </footer>
+</body>
+</html>

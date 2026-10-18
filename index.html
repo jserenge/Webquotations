@@ -1,67 +1,377 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex"><!-- remove this line if you want the page on Google -->
-<title>Website quote</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#f2f4f1;--ink:#17201c;--mut:#5b6760;--line:#cfd6d0;--card:#fff;--ac:#0b5d5e;--onac:#fff}
-@media(prefers-color-scheme:dark){:root{--bg:#0f1613;--ink:#e6ece8;--mut:#9aa8a0;--line:#2a3630;--card:#16201b;--ac:#5fd0c4;--onac:#06201c}}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Hanken Grotesk",system-ui,sans-serif}
-h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0}
-a{color:var(--ac)}:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
-.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-header{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
-header nav a{margin-left:20px;color:var(--ink);text-decoration:none;font-weight:500}
-.hero{padding:56px 0 40px}.hero h1{font-size:clamp(2.4rem,7vw,4.6rem);font-weight:800;max-width:14ch;letter-spacing:-.02em}
-.hero p{max-width:60ch;color:var(--mut);font-size:1.1rem;margin-top:20px}
-section{padding:40px 0;border-top:1px solid var(--line)}section>.wrap>h2{font-size:2rem;margin-bottom:8px}
-.sub{color:var(--mut);margin:0 0 28px;max-width:60ch}
-.work{display:grid;grid-template-columns:240px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--line);align-items:center}
-.shot{display:block;aspect-ratio:4/3;border-radius:6px;background:var(--line) center top/cover}
-.work h3{font-size:1.5rem}.meta{color:var(--mut);margin:2px 0 8px;font-size:.95rem}.work p{margin:0 0 8px}.links a{margin-right:16px;font-weight:700}
-.q{display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:start}
-fieldset{border:0;padding:0;margin:0 0 28px}legend{font:700 1.25rem "Bricolage Grotesque",sans-serif;margin-bottom:10px;padding:0}
-.opt{display:grid;grid-template-columns:auto 1fr auto auto;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--line);background:var(--card);border-radius:6px;margin-bottom:8px;cursor:pointer}
-.opt:has(input:checked){border-color:var(--ac);box-shadow:inset 0 0 0 1px var(--ac)}
-.opt input[type=radio],.opt input[type=checkbox]{accent-color:var(--ac);width:18px;height:18px}
-.opt small{display:block;color:var(--mut)}.pr{font-weight:700;white-space:nowrap}.qty{width:60px;padding:4px;font:inherit}
-.sum{position:sticky;top:16px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:20px}
-.sum h3{font-size:1.3rem;margin-bottom:12px}.sum ul{list-style:none;margin:0 0 12px;padding:0;font-size:.95rem}
-.sum li{display:flex;justify-content:space-between;gap:12px;padding:3px 0}
-.tot{border-top:1px solid var(--line);padding-top:10px}.tot div{display:flex;justify-content:space-between}
-.big{font:800 1.8rem "Bricolage Grotesque",sans-serif}
-.sum input,.sum textarea{width:100%;margin-top:10px;padding:9px;font:inherit;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
-.btn{display:block;text-align:center;margin-top:10px;padding:12px;border-radius:6px;background:var(--ac);color:var(--onac);font-weight:700;text-decoration:none}
-.btn.alt{background:none;color:var(--ac);border:1px solid var(--ac)}
-footer{padding:30px 0;color:var(--mut);font-size:.9rem;border-top:1px solid var(--line)}
-@media(max-width:800px){.work{grid-template-columns:1fr}.q{grid-template-columns:1fr}.sum{position:static}.opt{grid-template-columns:auto 1fr auto}.qty{grid-column:2}}
-</style></head><body>
-<div class="wrap">
-<header><strong id="logo"></strong><nav><a href="#work">Work</a><a href="#quote">Build your quote</a></nav></header>
-<div class="hero"><h1 id="tag"></h1><p id="bio"></p></div></div>
-<section id="work"><div class="wrap"><h2>Recent work</h2><p class="sub">Each demo is a working copy of the design. Open one to scroll through it as your customers would.</p><div id="work-list"></div></div></section>
-<section id="quote"><div class="wrap"><h2>Build your quote</h2><p class="sub">Pick what you need. The total updates as you go, and you can send it to me when you’re happy.</p>
-<div class="q"><form id="f" onsubmit="return false"><div id="groups"></div></form>
-<aside class="sum"><h3>Your quote</h3><ul id="lines"></ul>
-<div class="tot"><div><span>One-off total</span><span class="big" id="once"></span></div><div><span>Yearly renewals</span><b id="year"></b></div><div><span id="depl"></span><b id="dep"></b></div></div>
-<input id="cn" placeholder="Your name or business"><textarea id="nt" rows="2" placeholder="Anything else I should know?"></textarea>
-<a class="btn" id="wa" target="_blank" rel="noopener">Send on WhatsApp</a><a class="btn alt" id="em">Send by email</a></aside></div></div></section>
-<div class="wrap"><footer>Prices are estimates in Kenyan shillings and are confirmed once I’ve seen your brief.</footer></div>
-<script src="assets/site-data.js"></script>
-<script>
-const S=SITE,P=S.pricing,$=s=>document.querySelector(s),kes=n=>'KES '+Math.round(n).toLocaleString('en-US');
-$('#logo').textContent=S.me.name;$('#tag').textContent=S.me.tagline;$('#bio').textContent=S.me.bio;document.title=S.me.name+' | Website quote';
-$('#work-list').innerHTML=S.work.map(w=>`<article class="work"><a class="shot" href="${w.demo}" style="background-image:url(${w.shot})" aria-label="Open ${w.title} demo"></a><div><h3>${w.title}</h3><p class="meta">${w.type}</p><p>${w.blurb}</p><p class="links"><a href="${w.demo}">View demo</a>${w.live?`<a href="${w.live}">Live site</a>`:''}</p></div></article>`).join('');
-$('#groups').innerHTML=P.groups.map(g=>`<fieldset><legend>${g.title}</legend>${g.items.map((it,i)=>`<label class="opt"><input type="${g.multi?'checkbox':'radio'}" name="${g.id}" value="${it.id}" ${!g.multi&&i==0?'checked':''}><span><b>${it.label}</b><small>${it.note||''}</small></span><span class="pr">${it.price?kes(it.price)+(it.per=='year'?' / year':'')+(it.qty?' each':''):'No cost'}</span>${it.qty?`<input class="qty" type="number" min="1" value="1" data-q="${it.id}" aria-label="Quantity">`:''}</label>`).join('')}</fieldset>`).join('');
-function calc(){let once=0,year=0,L=[];
-P.groups.forEach(g=>g.items.forEach(it=>{const el=document.querySelector(`[name="${g.id}"][value="${it.id}"]`);if(!el.checked)return;
-const qe=document.querySelector(`[data-q="${it.id}"]`),q=qe?Math.max(1,+qe.value||1):1,t=it.price*q;
-if(it.per=='year')year+=t;else once+=t;if(t)L.push({l:it.label+(q>1?' ×'+q:''),t,y:it.per=='year'});}));
-$('#lines').innerHTML=L.map(x=>`<li><span>${x.l}</span><span>${kes(x.t)}${x.y?'/yr':''}</span></li>`).join('');
-$('#once').textContent=kes(once);$('#year').textContent=kes(year);$('#depl').textContent=P.depositPct+'% deposit to start';$('#dep').textContent=kes(once*P.depositPct/100);
-const m=`Hi ${S.me.name}, I’d like this website quote:\n`+L.map(x=>`- ${x.l}: ${kes(x.t)}${x.y?'/yr':''}`).join('\n')+`\nOne-off: ${kes(once)}\nYearly: ${kes(year)}\nFrom: ${$('#cn').value||'(name not given)'}\nNotes: ${$('#nt').value||'-'}`;
-$('#wa').href=`https://wa.me/${S.me.whatsapp}?text=${encodeURIComponent(m)}`;$('#em').href=`mailto:${S.me.email}?subject=${encodeURIComponent('Website quote request')}&body=${encodeURIComponent(m)}`;}
-document.addEventListener('input',calc);calc();
-</script></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Jeremy Serenge | Web Designer &amp; Creative Engineer</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-mark">
+        <a href="index.html" class="brand-title" id="site-name">Jeremy Serenge</a>
+        <div class="status-badge" id="availability-badge">
+          <span class="status-dot"></span>
+          <span>Available for Commissions</span>
+        </div>
+      </div>
+      
+      <nav class="header-nav">
+        <a href="#works" class="nav-link">Selected Works</a>
+        <a href="#philosophy" class="nav-link">Philosophy</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="quote/index.html" class="nav-link" style="color:var(--accent); font-weight:600;">Build a Quote →</a>
+        
+        <button class="theme-toggle" id="theme-btn" aria-label="Toggle theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <a href="quote/index.html" class="btn btn-accent btn-sm">Estimate Project</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-meta">
+          <span class="mono-tag" id="hero-role">INDEPENDENT CREATIVE ENGINEERING</span>
+          <span class="mono-tag" style="opacity: 0.4;">•</span>
+          <span class="mono-tag" id="hero-location">NAIROBI, KENYA</span>
+        </div>
+        
+        <h1 class="hero-title" id="hero-tagline">
+          Digital craftsmanship for <span class="serif-italic" style="color:var(--accent)">ambitious brands.</span>
+        </h1>
+        
+        <p class="hero-bio" id="hero-bio">
+          I design and engineer disciplined, high-converting digital flagships for businesses and founders. Built with typographic restraint, sub-second performance, and quiet luxury.
+        </p>
+        
+        <div class="hero-actions">
+          <a href="#works" class="btn btn-primary">
+            <span>Explore Works</span>
+            <span>↓</span>
+          </a>
+          <a href="quote/index.html" class="btn btn-outline">
+            <span>Interactive Quote Estimator</span>
+            <span>→</span>
+          </a>
+        </div>
+
+        <div class="hero-indicators">
+          <div class="indicator-item">
+            <span class="indicator-value">Sub-second</span>
+            <span class="indicator-label">Optimized load times on 4G &amp; desktop fiber</span>
+          </div>
+          <div class="indicator-item">
+            <span class="indicator-value">Bespoke</span>
+            <span class="indicator-label">Zero generic templates or bloated site builders</span>
+          </div>
+          <div class="indicator-item">
+            <span class="indicator-value">Direct</span>
+            <span class="indicator-label">Personal partnership from concept to stewardship</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selected Works / Demos Section -->
+    <section id="works" style="padding: clamp(4rem, 8vw, 7rem) 0;">
+      <div class="container">
+        <div class="section-header">
+          <span class="mono-tag">PORTFOLIO &amp; PROOFS OF CONCEPT</span>
+          <div class="section-title-wrap">
+            <h2 class="section-title">Selected Works</h2>
+            <span class="mono-tag" id="works-count">03 RECENT DEMOS</span>
+          </div>
+          <p class="section-desc">
+            Each project below is an interactive functional prototype. You can test live user flows, examine mobile responsiveness, and experience the design as your customers will.
+          </p>
+        </div>
+
+        <div class="works-grid" id="works-container">
+          <!-- Dynamically populated from site-data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy & Principles -->
+    <section id="philosophy" style="padding: clamp(3rem, 6vw, 6rem) 0; background: var(--bg-subtle); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="container">
+        <div class="section-header">
+          <span class="mono-tag">STUDIO PHILOSOPHY</span>
+          <h2 class="section-title">Disciplined Craft, Commercial Impact</h2>
+          <p class="section-desc">
+            We believe that extraordinary websites are born at the intersection of aesthetic rigor and technical discipline.
+          </p>
+        </div>
+
+        <div class="philosophy-grid" id="philosophy-container">
+          <!-- Dynamically populated from site-data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Capabilities & Services -->
+    <section id="services" style="padding: clamp(4rem, 8vw, 7rem) 0;">
+      <div class="container">
+        <div class="section-header">
+          <span class="mono-tag">CORE CAPABILITIES</span>
+          <div class="section-title-wrap">
+            <h2 class="section-title">Capabilities &amp; Services</h2>
+            <a href="quote/index.html" class="mono-tag" style="color:var(--accent); font-weight:700;">CUSTOM SCOPE AVAILABLE ↗</a>
+          </div>
+          <p class="section-desc">
+            Every engagement is structured around measurable outcomes, brand elevation, and long-term technical reliability.
+          </p>
+        </div>
+
+        <div class="services-list" id="services-container">
+          <!-- Dynamically populated from site-data.js -->
+        </div>
+
+        <!-- Invitation to Quote Builder -->
+        <div class="cta-banner">
+          <span class="mono-tag" style="color:var(--accent);">TRANSPARENT VALUE</span>
+          <h2>Every partnership begins with honest figures and clear scope.</h2>
+          <p>
+            Use our interactive estimator to customize your website package, select domain, hosting, and specialized add-ons, and instantly generate a detailed scope proposal.
+          </p>
+          <a href="quote/index.html" class="btn btn-accent">
+            <span>Launch Project Estimator</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Interactive Device Preview Modal -->
+  <div class="preview-modal-backdrop" id="preview-modal" aria-hidden="true">
+    <div class="preview-modal-box">
+      <div class="preview-modal-header">
+        <div style="display:flex; align-items:center; gap:16px;">
+          <strong id="preview-title" style="font-family:var(--font-serif); font-size:1.15rem;">Live Demo Preview</strong>
+          <div class="preview-device-switcher">
+            <button class="device-btn active" id="btn-desktop" onclick="setPreviewDevice('desktop')">Desktop View</button>
+            <button class="device-btn" id="btn-mobile" onclick="setPreviewDevice('mobile')">Mobile View</button>
+          </div>
+        </div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <a id="preview-external" href="#" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Open in Tab ↗</a>
+          <button class="btn btn-sm btn-outline" onclick="closePreviewModal()" style="padding:6px 12px;">✕ Close</button>
+        </div>
+      </div>
+      <div class="preview-frame-wrap">
+        <iframe id="preview-iframe" class="preview-frame" src="about:blank" title="Demo preview"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 style="font-size:1.5rem;" id="footer-name">Jeremy Serenge</h3>
+          <p style="color:var(--text-secondary); font-size:0.9rem;" id="footer-bio">
+            Independent web design &amp; creative engineering. Crafting digital flagships for leading businesses in Nairobi and internationally.
+          </p>
+        </div>
+        <div class="footer-nav-col">
+          <span class="footer-heading">Navigation</span>
+          <a href="#works" class="nav-link">Selected Works</a>
+          <a href="#philosophy" class="nav-link">Philosophy</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="quote/index.html" class="nav-link">Project Estimator</a>
+        </div>
+        <div class="footer-nav-col">
+          <span class="footer-heading">Direct Contact</span>
+          <a id="footer-email" href="mailto:you@example.com" class="nav-link">Email</a>
+          <a id="footer-wa" href="https://wa.me/" target="_blank" rel="noopener" class="nav-link">WhatsApp Concierge</a>
+          <a id="footer-github" href="#" target="_blank" rel="noopener" class="nav-link">GitHub Repository</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; <span id="year">2026</span> <span id="footer-cr-name">Jeremy Serenge</span>. All rights reserved.</span>
+        <span>Curated with typographic discipline &amp; semantic code.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/site-data.js"></script>
+  <script>
+    const S = window.SITE;
+
+    // Theme Management
+    const themeBtn = document.getElementById('theme-btn');
+    const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    themeBtn.addEventListener('click', () => {
+      const active = document.documentElement.getAttribute('data-theme');
+      const next = active === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+
+    // Populate Hero & Identity
+    if (S.me) {
+      document.getElementById('site-name').textContent = S.me.name;
+      document.getElementById('footer-name').textContent = S.me.name;
+      document.getElementById('footer-cr-name').textContent = S.me.name;
+      document.title = `${S.me.name} — Web Designer & Creative Engineer`;
+      
+      if (S.me.role) document.getElementById('hero-role').textContent = S.me.role.toUpperCase();
+      if (S.me.location) document.getElementById('hero-location').textContent = S.me.location.toUpperCase();
+      if (S.me.tagline) document.getElementById('hero-tagline').innerHTML = S.me.tagline.replace(/ambitious brands/i, '<span class="serif-italic" style="color:var(--accent)">ambitious brands.</span>');
+      if (S.me.bio) {
+        document.getElementById('hero-bio').textContent = S.me.bio;
+        document.getElementById('footer-bio').textContent = S.me.bio;
+      }
+      if (S.me.status) {
+        document.getElementById('availability-badge').innerHTML = `<span class="status-dot"></span><span>${S.me.status}</span>`;
+      }
+      if (S.me.email) {
+        document.getElementById('footer-email').href = `mailto:${S.me.email}`;
+        document.getElementById('footer-email').textContent = S.me.email;
+      }
+      if (S.me.whatsapp) {
+        document.getElementById('footer-wa').href = `https://wa.me/${S.me.whatsapp}?text=${encodeURIComponent('Hello Jeremy, I reviewed your portfolio and would like to discuss a project.')}`;
+      }
+      if (S.me.github) {
+        document.getElementById('footer-github').href = S.me.github;
+      }
+    }
+
+    // Populate Works Grid
+    const worksContainer = document.getElementById('works-container');
+    if (S.work && worksContainer) {
+      document.getElementById('works-count').textContent = `0${S.work.length} RECENT DEMOS`;
+      worksContainer.innerHTML = S.work.map((w, idx) => {
+        const isRev = idx % 2 === 1;
+        const tags = (w.tags || []).map(t => `<span class="tag-badge">${t}</span>`).join('');
+        return `
+          <article class="work-card ${isRev ? 'reverse' : ''}">
+            <div class="work-visual" onclick="openPreview('${w.demo}', '${w.title}')" style="cursor:pointer;" title="Click to view interactive preview">
+              <img class="work-img" src="${w.shot}" alt="${w.title} interactive preview mockup" loading="lazy">
+            </div>
+            <div class="work-content">
+              <div class="work-meta-top">
+                <span class="mono-tag" style="color:var(--accent); font-weight:700;">${w.category || `PROJECT 0${idx+1}`}</span>
+              </div>
+              <h3 class="work-title">${w.title}</h3>
+              <p class="work-type">${w.type}</p>
+              <p class="work-blurb">${w.blurb}</p>
+              <div class="work-tags">${tags}</div>
+              <div class="work-links">
+                <button class="btn btn-primary btn-sm" onclick="openPreview('${w.demo}', '${w.title}')">
+                  <span>Interactive Preview</span>
+                  <span>↗</span>
+                </button>
+                <a href="${w.demo}" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Full Screen</a>
+                ${w.live ? `<a href="${w.live}" target="_blank" rel="noopener" class="nav-link" style="font-size:0.825rem; font-weight:600;">Visit Live Site ↗</a>` : ''}
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    // Populate Philosophy
+    const philosophyContainer = document.getElementById('philosophy-container');
+    if (S.philosophy && philosophyContainer) {
+      philosophyContainer.innerHTML = S.philosophy.map(p => `
+        <div class="philosophy-item">
+          <span class="philosophy-num">${p.number} // PRINCIPLE</span>
+          <h3 class="philosophy-title">${p.title}</h3>
+          <p class="philosophy-desc">${p.description}</p>
+        </div>
+      `).join('');
+    }
+
+    // Populate Services
+    const servicesContainer = document.getElementById('services-container');
+    if (S.services && servicesContainer) {
+      servicesContainer.innerHTML = S.services.map(s => `
+        <div class="service-row">
+          <span class="service-num">${s.number}</span>
+          <div class="service-name">${s.name}</div>
+          <p class="service-summary">${s.summary}</p>
+        </div>
+      `).join('');
+    }
+
+    // Preview Modal Logic
+    const modal = document.getElementById('preview-modal');
+    const iframe = document.getElementById('preview-iframe');
+    const previewTitle = document.getElementById('preview-title');
+    const previewExternal = document.getElementById('preview-external');
+    const btnDesktop = document.getElementById('btn-desktop');
+    const btnMobile = document.getElementById('btn-mobile');
+
+    window.openPreview = function(url, title) {
+      previewTitle.textContent = `${title} — Interactive Concept`;
+      previewExternal.href = url;
+      iframe.src = url;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      setPreviewDevice('desktop');
+    };
+
+    window.closePreviewModal = function() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      iframe.src = 'about:blank';
+      document.body.style.overflow = '';
+    };
+
+    window.setPreviewDevice = function(mode) {
+      if (mode === 'mobile') {
+        iframe.classList.add('phone-mode');
+        btnMobile.classList.add('active');
+        btnDesktop.classList.remove('active');
+      } else {
+        iframe.classList.remove('phone-mode');
+        btnDesktop.classList.add('active');
+        btnMobile.classList.remove('active');
+      }
+    };
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closePreviewModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) {
+        closePreviewModal();
+      }
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
