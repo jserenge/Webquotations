@@ -39,35 +39,46 @@ window.SITE = {
     {
       slug: "afya",
       title: "Afya Wellness",
-      category: "01 // CLINICAL & COMMERCE",
-      type: "Nutrition clinic & organic bakery flagship",
-      blurb: "Holistic clinical nutrition portal, organic sourdough bakery ordering, and customized therapeutic gut health protocols.",
+      category: "01 // CLINICAL & NUTRITION",
+      type: "Therapeutic nutrition clinic & artisan bakery flagship",
+      blurb: "Food as medicine crafted for cellular vitality. Comprehensive gut health protocols, artisan botanical sourdough bakery ordering, and clinical consultation scheduling.",
       demo: "demos/afya/",
-      shot: "assets/screenshots/afya.svg",
+      shot: "assets/screenshots/afya.png",
       live: "",
-      tags: ["Artisanal Bakery", "Clinical Booking", "E-Commerce", "Fluid Layout"]
+      tags: ["Therapeutic Nutrition", "Artisan Bakery", "Clinical Booking", "Cellular Health"]
     },
     {
       slug: "true-barbers",
       title: "True Barbers",
-      category: "02 // LUXURY GROOMING",
-      type: "Bespoke barber lounge & VIP appointment suite",
-      blurb: "Mobile-optimized booking experience, tailored service menus, and multi-lounge scheduling across Westlands & Kilimani.",
+      category: "02 // BESPOKE GROOMING",
+      type: "Gentlemen's atelier & private VIP grooming lounge",
+      blurb: "Nairobi’s premier gentleman’s atelier where timeless heritage barbering meets contemporary refinement. Chair reservations, signature service rituals, and dual Westlands & Karen suites.",
       demo: "demos/true-barbers/",
-      shot: "assets/screenshots/true-barbers.svg",
+      shot: "assets/screenshots/true-barbers.png",
       live: "",
-      tags: ["Quiet Luxury", "Mobile Booking", "Dual Lounges", "VIP Concierge"]
+      tags: ["Gentlemen's Atelier", "VIP Booking", "Westlands & Karen", "Quiet Luxury"]
+    },
+    {
+      slug: "luxury-kenya",
+      title: "Luxury Kenya",
+      category: "03 // ARCHITECTURAL COMMERCE",
+      type: "Curated goods for luxury living & architectural artifacts",
+      blurb: "Architectural artifacts rooted in absolute restraint. Cast bronze, hand-turned stoneware, and unlacquered aerospace aluminum for distinguished residential and commercial spaces.",
+      demo: "demos/luxury-kenya/",
+      shot: "assets/screenshots/luxury-kenya.png",
+      live: "",
+      tags: ["Architectural Artifacts", "Curated Goods", "Raw Materiality", "Sovereign Living"]
     },
     {
       slug: "kifaru-safari",
-      title: "Kifaru Safaris",
-      category: "03 // BESPOKE EXPEDITIONS",
-      type: "Luxury conservancy & chartered safari agency",
-      blurb: "Private fly-in wilderness camps, tailored conservation itineraries, and high-touch private charter travel routing.",
+      title: "Kifaru Conservancy",
+      category: "04 // CONSERVANCY & EXPEDITIONS",
+      type: "Private wilderness camps & bespoke wildlife expeditions",
+      blurb: "Untamed horizons curated in silence. Private chartered fly-in camps across the Mara ecosystem, Lewa rhino tracking, and tailored conservation itineraries across East Africa.",
       demo: "demos/kifaru-safari/",
       shot: "assets/screenshots/kifaru-safari.svg",
       live: "",
-      tags: ["Conservation", "Editorial Layout", "Bespoke Itineraries", "Private Camps"]
+      tags: ["Private Fly-in", "Mara Conservancy", "Wildlife Tracking", "Bespoke Itineraries"]
     }
   ],
 

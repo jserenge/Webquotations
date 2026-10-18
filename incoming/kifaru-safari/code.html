@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Kifaru Safaris | Luxury Wilderness Expeditions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F7F5EE;
+      --card: #FFFFFF;
+      --earth: #2D261C;
+      --ochre: #8F572C;
+      --olive: #4A5144;
+      --sand: #EAE5D8;
+      --muted: #6B6559;
+      --line: #DFD9CC;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--earth);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    header {
+      padding: 24px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand {
+      font-family: 'Newsreader', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    .hero {
+      max-width: 980px;
+      margin: 80px auto 48px;
+      padding: 0 24px;
+      text-align: center;
+    }
+    .tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: var(--ochre);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+    .hero h1 {
+      font-family: 'Newsreader', serif;
+      font-size: clamp(2.4rem, 6.5vw, 4.4rem);
+      line-height: 1.1;
+      font-weight: 400;
+      margin-bottom: 24px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--ochre);
+    }
+    .hero p {
+      max-width: 620px;
+      margin: 0 auto 36px;
+      font-size: 1.1rem;
+      color: var(--muted);
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 4px;
+      background: var(--earth);
+      color: #FFF;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.9; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1080px;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+    .itinerary {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .itin-num {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--ochre);
+      margin-bottom: 12px;
+    }
+    .itinerary h3 {
+      font-family: 'Newsreader', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .itinerary p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+    .itin-footer {
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .itin-price {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--ochre);
+    }
+    footer {
+      text-align: center;
+      padding: 48px 24px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <div id="cd" style="position:fixed;top:6px;left:50%;transform:translateX(-50%);z-index:99999;background:#000c;color:#fff;font:12px system-ui;padding:4px 12px;border-radius:99px;border:1px solid #444;">Concept Demo</div>
+  <header>
+    <div class="brand">Kifaru Safaris</div>
+    <div style="font-family:'Space Mono',monospace; font-size:0.75rem; color:var(--muted)">NAIROBI • MARA • LAIKIPIA</div>
+  </header>
+  <main>
+    <section class="hero">
+      <span class="tag">Expeditions &amp; Conservancies</span>
+      <h1>Untamed horizons, <em>bespoke itineraries.</em></h1>
+      <p>Private luxury fly-in camps, tailored conservation safaris, and intimate wildlife encounters across Kenya’s iconic sanctuaries.</p>
+      <a href="#itineraries" class="btn">View Curated Journeys</a>
+    </section>
+    <section id="itineraries" class="grid">
+      <div class="itinerary">
+        <div>
+          <div class="itin-num">01 // MARA TRIANGLE</div>
+          <h3>The Great Crossing Camp</h3>
+          <p>7 Days of private chartered game drives following the migration river crossings with master guides.</p>
+        </div>
+        <div class="itin-footer">
+          <span>7 Days • Luxury Fly-in</span>
+          <span class="itin-price">From $4,200</span>
+        </div>
+      </div>
+      <div class="itinerary">
+        <div>
+          <div class="itin-num">02 // LAIKIPIA PLATEAU</div>
+          <h3>Black Rhino Sanctuary Villa</h3>
+          <p>5 Days at Lewa Wildlife Conservancy. Private walking safaris and nocturnal tracking experience.</p>
+        </div>
+        <div class="itin-footer">
+          <span>5 Days • Exclusive Villa</span>
+          <span class="itin-price">From $3,600</span>
+        </div>
+      </div>
+      <div class="itinerary">
+        <div>
+          <div class="itin-num">03 // AMBOSELI BASIN</div>
+          <h3>Under Kilimanjaro</h3>
+          <p>4 Days beneath the snow-capped peak observing East Africa's greatest elephant herds.</p>
+        </div>
+        <div class="itin-footer">
+          <span>4 Days • Tented Oasis</span>
+          <span class="itin-price">From $2,800</span>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2026 Kifaru Expeditions. Portfolio concept demonstration.</p>
+  </footer>
+</body>
+</html>

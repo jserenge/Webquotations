@@ -1,253 +1,859 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex">
-  <title>True Barbers | Nairobi Gentlemen's Lounge</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0D0E0E;
-      --surface: #141616;
-      --card: #1A1D1C;
-      --gold: #D4AF37;
-      --gold-light: #F3E5AB;
-      --text: #F5F4F0;
-      --muted: #959892;
-      --border: #292E2C;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-    .header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(12px);
-      background: rgba(13, 14, 14, 0.85);
-      border-bottom: 1px solid var(--border);
-      padding: 16px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .brand {
-      font-family: 'Cinzel', serif;
-      font-size: 1.3rem;
-      letter-spacing: 0.15em;
-      color: var(--gold);
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-    .locations-tag {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.75rem;
-      color: var(--muted);
-      letter-spacing: 0.1em;
-    }
-    .btn-gold {
-      background: var(--gold);
-      color: #0D0E0E;
-      font-weight: 600;
-      font-size: 0.85rem;
-      padding: 10px 20px;
-      border-radius: 4px;
-      text-decoration: none;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      transition: all 0.2s ease;
-      display: inline-block;
-    }
-    .btn-gold:hover {
-      background: var(--gold-light);
-      transform: translateY(-1px);
-    }
-    .hero {
-      padding: 72px 24px 48px;
-      max-width: 1000px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .hero-tag {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.8rem;
-      color: var(--gold);
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-      display: inline-block;
-    }
-    .hero h1 {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(2.2rem, 6vw, 3.8rem);
-      line-height: 1.15;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      max-width: 580px;
-      margin: 0 auto 32px;
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 24px;
-    }
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 28px;
-      transition: border-color 0.2s;
-    }
-    .card:hover {
-      border-color: var(--gold);
-    }
-    .card-num {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.75rem;
-      color: var(--gold);
-      margin-bottom: 12px;
-    }
-    .card h3 {
-      font-family: 'Cinzel', serif;
-      font-size: 1.4rem;
-      margin-bottom: 8px;
-    }
-    .card-meta {
-      display: flex;
-      justify-content: space-between;
-      color: var(--muted);
-      font-size: 0.85rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 12px;
-      margin-bottom: 16px;
-    }
-    .card-price {
-      font-weight: 700;
-      color: var(--gold);
-    }
-    .card p {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 20px;
-    }
-    .branch-bar {
-      max-width: 1100px;
-      margin: 48px auto;
-      padding: 32px 24px;
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 32px;
-    }
-    .branch h4 {
-      font-family: 'Cinzel', serif;
-      color: var(--gold);
-      font-size: 1.1rem;
-      margin-bottom: 6px;
-    }
-    .branch p {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-    footer {
-      text-align: center;
-      padding: 40px 24px;
-      color: var(--muted);
-      font-size: 0.85rem;
-      border-top: 1px solid var(--border);
-    }
-  </style>
-</head>
-<body>
-  <div id="cd" style="position:fixed;top:6px;left:50%;transform:translateX(-50%);z-index:99999;background:#000c;color:#fff;font:12px system-ui;padding:4px 12px;border-radius:99px;border:1px solid #333;">Concept Demo</div>
-  
-  <header class="header">
-    <div class="brand">True Barbers</div>
-    <div class="locations-tag">WESTLANDS • KILIMANI</div>
-    <a href="#book" class="btn-gold" onclick="alert('Demo: Online booking integration is simulated for this concept preview.'); return false;">Book Lounge</a>
-  </header>
 
-  <main>
-    <section class="hero">
-      <span class="hero-tag">Master Grooming &amp; Lounge</span>
-      <h1>Precision Cut.<br><span style="color:var(--gold); font-style:italic;">Quiet Luxury.</span></h1>
-      <p>A contemporary sanctuary for discerning gentlemen. Traditional hot towel precision meets bespoke contemporary styling in Nairobi.</p>
-      <a href="#services" class="btn-gold">Explore Services &amp; Rates</a>
-    </section>
+<html class="dark" lang="en"><head><meta name="robots" content="noindex"><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-error":"#690005","on-tertiary":"#362f2c","outline-variant":"#4d463c","on-surface-variant":"#d1c5b8","on-secondary-fixed":"#241a00","secondary":"#e9c349","on-secondary-fixed-variant":"#574500","tertiary":"#d1c5c1","on-primary-fixed-variant":"#584323","on-surface":"#e5e2e1","on-secondary":"#3c2f00","surface-dim":"#131313","on-tertiary-container":"#463f3b","on-tertiary-fixed":"#201a18","secondary-container":"#af8d11","on-primary":"#402d0f","surface-variant":"#353534","surface-container-highest":"#353534","on-error-container":"#ffdad6","on-background":"#e5e2e1","surface-bright":"#393939","surface-container":"#201f1f","secondary-fixed-dim":"#e9c349","tertiary-fixed":"#ece0db","surface-tint":"#e0c298","on-tertiary-fixed-variant":"#4d4542","background":"#131313","on-secondary-container":"#342800","surface-container-low":"#1c1b1b","inverse-primary":"#725b38","surface":"#131313","error":"#ffb4ab","surface-container-lowest":"#0e0e0e","primary-container":"#c5a880","outline":"#998f83","secondary-fixed":"#ffe088","surface-container-high":"#2a2a2a","inverse-on-surface":"#313030","primary":"#e2c399","primary-fixed":"#fedeb2","tertiary-fixed-dim":"#cfc4bf","on-primary-fixed":"#281800","primary-fixed-dim":"#e0c298","on-primary-container":"#513d1d","inverse-surface":"#e5e2e1","tertiary-container":"#b5aaa6","error-container":"#93000a"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"margin":"2rem","gutter-sm":"1rem","space-lg":"1.75rem","space-xl":"3rem","space-sm":"0.5rem","gutter-lg":"2.5rem","gutter":"1.5rem","space-xs":"0.25rem","margin-lg":"4rem","margin-sm":"1.25rem","space-md":"1rem"},fontFamily:{"headline-lg-mobile":["Playfair Display"],"display-lg":["Playfair Display"],"label-md":["Inter"],"label-sm":["Inter"],"body-sm":["Inter"],"body-lg":["Inter"],"label-lg":["Inter"],"headline-sm":["Playfair Display"],"display-lg-mobile":["Playfair Display"],"body-md":["Inter"],"headline-md":["Playfair Display"],"headline-lg":["Playfair Display"]},fontSize:{"headline-lg-mobile":["28px",{lineHeight:"36px",fontWeight:"500"}],"display-lg":["56px",{lineHeight:"64px",letterSpacing:"-0.02em",fontWeight:"600"}],"label-md":["11px",{lineHeight:"16px",letterSpacing:"0.15em",fontWeight:"600"}],"label-sm":["10px",{lineHeight:"14px",letterSpacing:"0.1em",fontWeight:"500"}],"body-sm":["13px",{lineHeight:"20px",fontWeight:"400"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"label-lg":["13px",{lineHeight:"18px",letterSpacing:"0.12em",fontWeight:"600"}],"headline-sm":["22px",{lineHeight:"30px",fontWeight:"500"}],"display-lg-mobile":["38px",{lineHeight:"46px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-md":["15px",{lineHeight:"24px",fontWeight:"400"}],"headline-md":["28px",{lineHeight:"36px",fontWeight:"500"}],"headline-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.01em",fontWeight:"500"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col justify-between"><header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/90 backdrop-blur-md border-b border-primary/20"><div class="h-20 w-full px-margin-sm lg:px-margin-lg flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-md"><img alt="True Barbers Crest Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Vf3rAISNMg_l-tGcYsID9yL_KP7n0Z0oJCxeIkeDxEslgE6UAUVBm4GPdC5S2fWvefvHuw8rVuIBo65TegjbMC5ex6IMuZzDMzV_j3Qx-19FMVfO9V5Xjrnsvpqv_Et-Bs3-IOXrUVOLbrm7FlDFjYbiRlNVt4vsyVuYyK9iPmWxmsvAxxOR-musbp1n6FD21wanc2TUTb8ptMhUUYzj1dtOf95wJwobqxG0Uz6uq2A17Vrwmpd0DjQxA"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-wider text-primary uppercase">True Barbers</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Nairobi Atelier</span></div></div><nav class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-primary font-bold border-b border-primary"><a aria-current="page" class="uppercase tracking-widest transition-colors py-space-xs text-primary font-bold border-b border-primary" data-path="the-atelier" href="#">The Atelier</a><a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors py-space-xs" data-path="signature-services" href="#">Signature Services</a><a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors py-space-xs" data-path="master-craftsmen" href="#">Master Craftsmen</a><a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors py-space-xs" data-path="the-lounge" href="#">The Lounge</a><a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors py-space-xs" data-path="locations-and-hours" href="#">Locations &amp; Hours</a><a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors py-space-xs" data-path="private-concierge" href="#">Private Concierge</a></nav><div class="flex items-center gap-space-md lg:gap-space-lg"><a class="hidden md:flex flex-col text-right group" href="tel:+254700882783"><span class="font-label-sm text-label-sm uppercase text-outline">Direct Concierge</span><span class="font-body-sm text-body-sm text-on-surface group-hover:text-primary transition-colors">+254 700 882 783</span></a><a class="px-6 py-3 bg-primary text-on-primary font-label-lg text-label-lg uppercase tracking-wider hover:bg-secondary transition-all duration-300 shadow-sm" href="#booking-experience">Reserve Appointment</a><div class="flex items-center pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-primary/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYZOumzr9Dp_KHg0QgkhUnoVT9cqycx3DqwNajFkrD31O1Gmxk8ZewPojLHqtNNES-Og9umrRIwoJDt-THqidiIGuOJHTdtGFkvRRpwLr2zJA8avmYrO6rQYp8G-KAqTYfBicTbDEFSFAhozZ2_RZvvBzyf_OJT8zXAKnnylgAL5O6ApAPJLrZwwKKwlO8cJPm0_vRDwxzsVIb0xhMG5zqNkyQ5KcfL_exaZf8EZ22fR0T9459bUHk"/></div></div></div></header><main class="w-full pt-20 bg-background flex-grow"><div class="flex flex-col w-full">
+<!-- HERO SECTION -->
+<section class="relative w-full overflow-hidden bg-surface-container-lowest py-space-xl lg:py-space-xl">
+<div class="absolute -top-40 right-1/4 w-96 h-96 rounded-full bg-primary/5 blur-[120px] pointer-events-none"></div>
+<div class="absolute bottom-0 -left-20 w-80 h-80 rounded-full bg-secondary/5 blur-[100px] pointer-events-none"></div>
+<div class="w-full px-margin-sm lg:px-margin-lg">
+<div class="flex flex-col items-center text-center max-w-4xl mx-auto space-y-space-md">
+<div class="inline-flex items-center gap-space-xs px-3 py-1 bg-surface-container border border-primary/30 rounded-none shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-md text-label-md uppercase tracking-[0.2em] text-primary">Nairobi’s Foremost Gentleman’s Atelier</span>
+</div>
+<h1 class="font-display-lg text-display-lg-mobile lg:text-display-lg text-on-surface tracking-tight">
+          The Art of Bespoke Grooming. <span class="italic font-normal text-primary">Redefined.</span>
+</h1>
+<p class="font-body-lg text-body-md lg:text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+          Nairobi’s premier gentleman’s atelier where timeless heritage barbering meets contemporary refinement. Crafted for discerning executives, diplomats, and gentlemen of distinguished style.
+        </p>
+<div class="flex flex-wrap items-center justify-center gap-space-md pt-space-xs">
+<a class="px-8 py-3.5 bg-primary text-on-primary font-label-lg text-label-lg uppercase tracking-widest hover:bg-secondary transition-all duration-300 shadow-md" href="#booking-experience">
+            Reserve Your Chair
+          </a>
+<a class="px-8 py-3.5 bg-transparent border border-primary/40 text-on-surface font-label-lg text-label-lg uppercase tracking-widest hover:border-primary hover:bg-primary/5 transition-all duration-300" href="#signature-services">
+            Explore Services
+          </a>
+</div>
+</div>
+<!-- Flagship Panoramic Interior Showcase -->
+<div class="mt-space-xl relative max-w-6xl mx-auto">
+<div class="relative p-1 bg-surface-container border border-primary/25 shadow-2xl">
+<div class="relative overflow-hidden aspect-[16/9] md:aspect-[21/9] w-full bg-surface-container-high">
+<img alt="True Barbers Nairobi Flagship Interior" class="w-full h-full object-cover filter brightness-95 contrast-105 transition-transform duration-700 hover:scale-[1.01]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRuCClllUQYxB_-RH0WdzSuJkcaHN1Z1_HVWZF36patvTezgXsXsukaYX5B2rseTGdlHc6-vxb96ayVZSXhyiUQWRde2FfCu28nD57bkQ_YGQ3TndhFPIuRm6Z_xn_Ktisz0nCyaO7zTTsGOWaCDKrNvQS14H64YC2YDkA5fGI4t7LvyFzMWzihSA-Lu_UK4xwMJEov7FqYCNFHYSgJ0KWCCFUn5uv2TTPySqcjWvhLrib8LVtljT3"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-4 left-4 md:bottom-8 md:left-8 flex items-center gap-space-sm bg-surface-container-lowest/80 backdrop-blur-md px-4 py-2 border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary text-base">location_on</span>
+<span class="font-label-md text-label-md uppercase tracking-widest text-on-surface">The Westlands Suite • Atelier Reserve</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Metrics Bar -->
+<div class="mt-space-lg max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 bg-surface-container-low border border-outline-variant/20 divide-y md:divide-y-0 md:divide-x divide-outline-variant/20">
+<div class="p-space-md flex flex-col items-center text-center">
+<span class="font-headline-md text-headline-md text-primary font-serif">14</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mt-1">Master Craftsmen</span>
+</div>
+<div class="p-space-md flex flex-col items-center text-center">
+<span class="font-headline-md text-headline-md text-primary font-serif">45-90m</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mt-1">Ritual Duration</span>
+</div>
+<div class="p-space-md flex flex-col items-center text-center">
+<span class="font-headline-md text-headline-md text-primary font-serif">Aged Malt</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mt-1">&amp; Espresso Bar</span>
+</div>
+<div class="p-space-md flex flex-col items-center text-center">
+<span class="font-headline-md text-headline-md text-primary font-serif">2 Suítes</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mt-1">Westlands &amp; Karen</span>
+</div>
+</div>
+</div>
+</section>
+<!-- BRAND PHILOSOPHY & CRAFTSMANSHIP -->
+<section class="w-full py-space-xl bg-background border-t border-outline-variant/20">
+<div class="w-full px-margin-sm lg:px-margin-lg max-w-6xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-md">
+<div class="space-y-space-xs max-w-xl">
+<span class="font-label-md text-label-md uppercase tracking-[0.2em] text-primary">The True Barbers Standard</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Time-Honored Rituals. Exacting Modern Standards.</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          Each consultation is an intimate dialogue between patron and artisan. We honor time-tested techniques with hand-forged Japanese shears, organic Kenyan botanicals, and bespoke hospitality.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-lg">
+<div class="p-space-lg bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between hover:border-primary/40 transition-colors group">
+<div class="space-y-space-md">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container border border-primary/20 text-primary group-hover:border-primary transition-colors">
+<span class="material-symbols-outlined">content_cut</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Architectural Haircraft</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Precision scissor-over-comb texturizing, architectural skin fades, and personalized cranial topography assessment tailored to your distinct profile.
+            </p>
+</div>
+<div class="pt-space-lg border-t border-outline-variant/20 mt-space-lg flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Stainless Forged Steel</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<div class="p-space-lg bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between hover:border-primary/40 transition-colors group">
+<div class="space-y-space-md">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container border border-primary/20 text-primary group-hover:border-primary transition-colors">
+<span class="material-symbols-outlined">waves</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Traditional Wet Shaves</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Multi-tiered hot towel compresses infused with eucalyptus oil, rich badger-hair Italian lather, and the effortless glide of hand-honed Japanese straight razors.
+            </p>
+</div>
+<div class="pt-space-lg border-t border-outline-variant/20 mt-space-lg flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Thermal Compress Ritual</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<div class="p-space-lg bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between hover:border-primary/40 transition-colors group">
+<div class="space-y-space-md">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container border border-primary/20 text-primary group-hover:border-primary transition-colors">
+<span class="material-symbols-outlined">local_bar</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Exclusive Lounge Provision</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Every service encompasses access to our discreet private lounge. Enjoy rare single malts, fresh Mount Kenya Arabica pour-overs, and a silent cigar terrace.
+            </p>
+</div>
+<div class="pt-space-lg border-t border-outline-variant/20 mt-space-lg flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Complimentary Concierge</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SIGNATURE SERVICES MENU -->
+<section class="w-full py-space-xl bg-surface-container-lowest border-t border-outline-variant/20" id="signature-services">
+<div class="w-full px-margin-sm lg:px-margin-lg max-w-6xl mx-auto">
+<div class="text-center max-w-2xl mx-auto mb-space-xl space-y-space-xs">
+<span class="font-label-md text-label-md uppercase tracking-[0.2em] text-primary">Curated Grooming Protocol</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Signature Rituals &amp; Tariffs</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Selected and administered with absolute precision using finest apothecary products.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-lg">
+<!-- Service 1 -->
+<div class="p-space-lg bg-surface-container border border-outline-variant/30 flex flex-col justify-between hover:border-primary/50 transition-all duration-300">
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Flagship Ceremony</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">The Royal Sovereign Ritual</h3>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-primary font-serif">KES 7,500</span>
+<span class="block font-label-sm text-label-sm text-outline uppercase tracking-wider">90 Minutes</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-md">
+              Our magnum opus: Bespoke haircut and design, therapeutic organic scalp revitalization, triple hot-towel steam shave, deep-pore clarifying volcanic mask, and cold chamomile compress.
+            </p>
+</div>
+<button class="w-full py-3 text-center border border-primary/40 font-label-md text-label-md uppercase tracking-widest text-on-surface hover:bg-primary hover:text-on-primary hover:border-primary transition-all" onclick="selectServiceFromCard('The Royal Sovereign Ritual', 7500, '90 mins')" type="button">
+            Select This Ritual
+          </button>
+</div>
+<!-- Service 2 -->
+<div class="p-space-lg bg-surface-container border border-outline-variant/30 flex flex-col justify-between hover:border-primary/50 transition-all duration-300">
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Classic Protocol</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">The Executive Cut &amp; Style</h3>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-primary font-serif">KES 4,500</span>
+<span class="block font-label-sm text-label-sm text-outline uppercase tracking-wider">50 Minutes</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-md">
+              Comprehensive cranial styling consultation, precision hand scissorwork, organic mint botanical cleanse, styling with matte clay, and straight razor neck refinement.
+            </p>
+</div>
+<button class="w-full py-3 text-center border border-primary/40 font-label-md text-label-md uppercase tracking-widest text-on-surface hover:bg-primary hover:text-on-primary hover:border-primary transition-all" onclick="selectServiceFromCard('The Executive Cut &amp; Style', 4500, '50 mins')" type="button">
+            Select This Ritual
+          </button>
+</div>
+<!-- Service 3 -->
+<div class="p-space-lg bg-surface-container border border-outline-variant/30 flex flex-col justify-between hover:border-primary/50 transition-all duration-300">
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Facial Grooming</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Artisanal Beard Sculpt &amp; Care</h3>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-primary font-serif">KES 3,800</span>
+<span class="block font-label-sm text-label-sm text-outline uppercase tracking-wider">40 Minutes</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-md">
+              Hand-guided beard symmetry shaping, hot towel infusion, organic argan and jojoba deep hydration, followed by cold stone pore closure and hand-whipped balm dressing.
+            </p>
+</div>
+<button class="w-full py-3 text-center border border-primary/40 font-label-md text-label-md uppercase tracking-widest text-on-surface hover:bg-primary hover:text-on-primary hover:border-primary transition-all" onclick="selectServiceFromCard('Artisanal Beard Sculpt &amp; Conditioning', 3800, '40 mins')" type="button">
+            Select This Ritual
+          </button>
+</div>
+<!-- Service 4 -->
+<div class="p-space-lg bg-surface-container border border-outline-variant/30 flex flex-col justify-between hover:border-primary/50 transition-all duration-300">
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Skin Restorative</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Clarifying Scalp &amp; Face Treatment</h3>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-primary font-serif">KES 4,200</span>
+<span class="block font-label-sm text-label-sm text-outline uppercase tracking-wider">45 Minutes</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-md">
+              Exfoliating Rift Valley volcanic ash paste, continuous steam vapor canopy, neck acupressure therapy, and antioxidant tea tree hydration mist.
+            </p>
+</div>
+<button class="w-full py-3 text-center border border-primary/40 font-label-md text-label-md uppercase tracking-widest text-on-surface hover:bg-primary hover:text-on-primary hover:border-primary transition-all" onclick="selectServiceFromCard('Gentleman\'s Clarifying Scalp &amp; Facial Treatment', 4200, '45 mins')" type="button">
+            Select This Ritual
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- MASTER CRAFTSMEN SHOWCASE -->
+<section class="w-full py-space-xl bg-background border-t border-outline-variant/20">
+<div class="w-full px-margin-sm lg:px-margin-lg max-w-6xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-md">
+<div class="space-y-space-xs max-w-xl">
+<span class="font-label-md text-label-md uppercase tracking-[0.2em] text-primary">Resident Artisans</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">The Master Craftsmen</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          Years of deliberate apprenticeship across London, Milan, and Nairobi. Our artisans operate with surgeon-like focus and unmatched discretion.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-lg">
+<!-- Craftsman 1 -->
+<div class="bg-surface-container border border-outline-variant/30 flex flex-col overflow-hidden group">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover filter grayscale contrast-110 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700" data-alt="Distinguished Kenyan master barber Brian Mwangi in sharp dark attire holding professional chrome shears in a vintage luxury barbershop, moody dramatic chiaroscuro lighting, rich wood background, cinematic luxury" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUpsWEaIZQwtN-DEqb02wEu3yqfpcSldo44CUby13jvUWibaS2sNA84DCKhc5Rpn-Unz3H3O6NfQY4wolchfigJsY3WQUoYulAe-TuQNh4d_lb4ln2rRw5-9oN_hPeysK905ram8ToovwLGvJy-YS4eSdRksgedSDzxcXNJkiyv0M-kffrWPnVu2YiVropMMnbxhZRBjieGOI6SA6BJaKjBP12vEPEszaQ5iALx3pWw4j4kjQy7N1g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+<span class="font-label-sm text-label-sm bg-primary text-on-primary px-2.5 py-1 uppercase tracking-widest font-semibold">12 Yrs Mastery</span>
+<span class="font-label-sm text-label-sm bg-surface-container-lowest/80 text-primary px-2 py-1 backdrop-blur-sm">Westlands Resident</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between space-y-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Brian Mwangi</h3>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary block mt-0.5">Senior Craftsman</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                Specializes in architectural drop fades, vintage razor tapering, and executive hair thinning restorations.
+              </p>
+</div>
+<button class="w-full py-2.5 mt-space-sm border border-outline-variant/40 text-on-surface font-label-md text-label-md uppercase tracking-wider hover:border-primary hover:text-primary transition-colors text-center" onclick="selectBarberFromCard('Brian Mwangi')" type="button">
+              Book with Brian
+            </button>
+</div>
+</div>
+<!-- Craftsman 2 -->
+<div class="bg-surface-container border border-outline-variant/30 flex flex-col overflow-hidden group">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover filter grayscale contrast-110 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700" data-alt="Refined senior African male barber Samuel Kariuki with neat silver beard styling hair in high-end barbershop atelier with warm brass accents and amber lighting, editorial portrait photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJrNNPePyGN80GODP7nbYORokizichxHI9MR-Gppga-Ea_xmJmPeDUGfyA3akxbldalk5648aMeGiWdvv3sbEWGlCiOV6SZPhORUhNAYhjwVNwmRIHuyiOE4cmqbTo5yqlKzu0H4fPs8iLCAtyAL4OCMELzSxvhSJmZqcLhnX2r7CZM56Po_zFaCJJ4g4JthIJCijoSHfp2iCE6Q0zOVfH4wIgHnIhnwdfZwg1K_XQwj82kLD2w1Wf"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+<span class="font-label-sm text-label-sm bg-primary text-on-primary px-2.5 py-1 uppercase tracking-widest font-semibold">15 Yrs Mastery</span>
+<span class="font-label-sm text-label-sm bg-surface-container-lowest/80 text-primary px-2 py-1 backdrop-blur-sm">Karen Resident</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between space-y-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Samuel Kariuki</h3>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary block mt-0.5">Creative Director</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                Renowned for traditional English shear precision, beard sculpting geometries, and bespoke VIP consultation.
+              </p>
+</div>
+<button class="w-full py-2.5 mt-space-sm border border-outline-variant/40 text-on-surface font-label-md text-label-md uppercase tracking-wider hover:border-primary hover:text-primary transition-colors text-center" onclick="selectBarberFromCard('Samuel Kariuki')" type="button">
+              Book with Samuel
+            </button>
+</div>
+</div>
+<!-- Craftsman 3 -->
+<div class="bg-surface-container border border-outline-variant/30 flex flex-col overflow-hidden group">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover filter grayscale contrast-110 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700" data-alt="Focused East African craftsman David Ochieng holding straight razor in warm luxury barber salon with dark walnut panels and golden chandeliers, close-up artisan portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDBO37YySxJmhm1lJEKyWUevihpZfAZWvCLpHKiT4pYcm8z2tOVsawOM4sjDqHhgv9HWppJ8flxsDM6cHBNFCLvC4WMI2f-vI88F_U62Y2rCt7NlyPCV_X1iDWYzt5-hKORS7a-1CORNqmG0Hi2ZDAVMZ3tKJLhMonGQ-XHcXZ_yiH-Dj5rRw5kuHGkKMm2KZBDe9uPV2TrCKjGYexWV4GAZiLcwjrLxYD03DRLmisiE-O1n6tiGeb"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+<span class="font-label-sm text-label-sm bg-primary text-on-primary px-2.5 py-1 uppercase tracking-widest font-semibold">9 Yrs Mastery</span>
+<span class="font-label-sm text-label-sm bg-surface-container-lowest/80 text-primary px-2 py-1 backdrop-blur-sm">Westlands Resident</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between space-y-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">David Ochieng</h3>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary block mt-0.5">Resident Artisan</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                Pioneering textured modern fades, botanical scalp exfoliation cures, and bespoke mustache styling.
+              </p>
+</div>
+<button class="w-full py-2.5 mt-space-sm border border-outline-variant/40 text-on-surface font-label-md text-label-md uppercase tracking-wider hover:border-primary hover:text-primary transition-colors text-center" onclick="selectBarberFromCard('David Ochieng')" type="button">
+              Book with David
+            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- MULTI-STEP BESPOKE BOOKING SUITE -->
+<section class="w-full py-space-xl bg-surface-container-lowest border-t border-outline-variant/20 relative" id="booking-experience">
+<div class="w-full px-margin-sm lg:px-margin-lg max-w-5xl mx-auto">
+<!-- Section Header -->
+<div class="text-center max-w-2xl mx-auto mb-space-lg space-y-space-xs">
+<span class="font-label-md text-label-md uppercase tracking-[0.2em] text-primary">Private Appointment Protocol</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">The Atelier Reservation Suite</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Select your desired ritual, favored craftsman, and preferred time slot for seamless discretion.</p>
+</div>
+<!-- Booking Interactive Stepper -->
+<div class="bg-surface-container-low border border-primary/25 p-space-md md:p-space-lg shadow-2xl relative">
+<!-- Step Indicator Bar -->
+<div class="grid grid-cols-4 mb-space-lg border-b border-outline-variant/30 pb-space-sm gap-2">
+<button class="text-left group flex flex-col focus:outline-none" id="step-tab-1" onclick="goToStep(1)" type="button">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold">Step 01</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium truncate">Service &amp; Ritual</span>
+</button>
+<button class="text-left group flex flex-col focus:outline-none" id="step-tab-2" onclick="goToStep(2)" type="button">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Step 02</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium truncate">Craftsman</span>
+</button>
+<button class="text-left group flex flex-col focus:outline-none" id="step-tab-3" onclick="goToStep(3)" type="button">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Step 03</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium truncate">Date &amp; Suite</span>
+</button>
+<button class="text-left group flex flex-col focus:outline-none" id="step-tab-4" onclick="goToStep(4)" type="button">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Step 04</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium truncate">Confirm</span>
+</button>
+</div>
+<form id="booking-form" onsubmit="handleReservationSubmit(event)">
+<!-- STEP 1: SERVICE -->
+<div class="space-y-space-md" id="booking-step-1">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Select Required Service</h3>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Prices inclusive of tax</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<label class="cursor-pointer">
+<input checked="" class="sr-only peer" data-duration="90 mins" data-price="7500" name="selected_service" onchange="updateSummary()" type="radio" value="The Royal Sovereign Ritual"/>
+<div class="p-space-md bg-surface-container border border-outline-variant/30 peer-checked:border-primary peer-checked:bg-primary/5 transition-all flex flex-col justify-between h-full">
+<div class="flex justify-between items-start">
+<span class="font-headline-sm text-headline-sm text-on-surface">Royal Sovereign</span>
+<span class="font-headline-sm text-headline-sm text-primary font-serif">KES 7,500</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider mt-1">90 Mins • Hair, Beard, Facial Clay &amp; Compress</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" data-duration="50 mins" data-price="4500" name="selected_service" onchange="updateSummary()" type="radio" value="The Executive Cut &amp; Style"/>
+<div class="p-space-md bg-surface-container border border-outline-variant/30 peer-checked:border-primary peer-checked:bg-primary/5 transition-all flex flex-col justify-between h-full">
+<div class="flex justify-between items-start">
+<span class="font-headline-sm text-headline-sm text-on-surface">Executive Cut &amp; Style</span>
+<span class="font-headline-sm text-headline-sm text-primary font-serif">KES 4,500</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider mt-1">50 Mins • Precision Scissor &amp; Clipper Styling</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" data-duration="40 mins" data-price="3800" name="selected_service" onchange="updateSummary()" type="radio" value="Artisanal Beard Sculpt &amp; Conditioning"/>
+<div class="p-space-md bg-surface-container border border-outline-variant/30 peer-checked:border-primary peer-checked:bg-primary/5 transition-all flex flex-col justify-between h-full">
+<div class="flex justify-between items-start">
+<span class="font-headline-sm text-headline-sm text-on-surface">Beard Sculpt &amp; Care</span>
+<span class="font-headline-sm text-headline-sm text-primary font-serif">KES 3,800</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider mt-1">40 Mins • Hot Towel, Razoring &amp; Argan Treatment</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" data-duration="45 mins" data-price="4200" name="selected_service" onchange="updateSummary()" type="radio" value="Gentleman's Clarifying Scalp &amp; Facial Treatment"/>
+<div class="p-space-md bg-surface-container border border-outline-variant/30 peer-checked:border-primary peer-checked:bg-primary/5 transition-all flex flex-col justify-between h-full">
+<div class="flex justify-between items-start">
+<span class="font-headline-sm text-headline-sm text-on-surface">Scalp &amp; Face Treatment</span>
+<span class="font-headline-sm text-headline-sm text-primary font-serif">KES 4,200</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider mt-1">45 Mins • Volcanic Exfoliation &amp; Vapor Mist</span>
+</div>
+</label>
+</div>
+<div class="flex justify-end pt-space-md">
+<button class="px-8 py-3 bg-primary text-on-primary font-label-lg text-label-lg uppercase tracking-wider hover:bg-secondary transition-colors" onclick="goToStep(2)" type="button">
+                Continue to Barber
+              </button>
+</div>
+</div>
+<!-- STEP 2: MASTER BARBER -->
+<div class="space-y-space-md hidden" id="booking-step-2">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Select Desired Master Craftsman</h3>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Senior Staff</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<label class="cursor-pointer">
+<input checked="" class="sr-only peer" name="selected_barber" onchange="updateSummary()" type="radio" value="First Available Senior Barber"/>
+<div class="p-space-md bg-surface-container border border-outline-variant/30 peer-checked:border-primary peer-checked:bg-primary/5 transition-all text-center flex flex-col justify-center items-center h-full">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<span class="font-headline-sm text-body-lg text-on-surface">First Available</span>
+<span class="font-label-sm text-label-sm text-outline mt-1 uppercase tracking-wider">Fastest Allocation</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" name="selected_barber" onchange="updateSummary()" type="radio" value="Brian Mwangi"/>
+<div class="p-space-md bg-surface-container border border-outline-variant/30 peer-checked:border-primary peer-checked:bg-primary/5 transition-all text-center flex flex-col justify-center items-center h-full">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined">person</span>
+</div>
+<span class="font-headline-sm text-body-lg text-on-surface">Brian Mwangi</span>
+<span class="font-label-sm text-label-sm text-outline mt-1 uppercase tracking-wider">Senior Craftsman</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" name="selected_barber" onchange="updateSummary()" type="radio" value="Samuel Kariuki"/>
+<div class="p-space-md bg-surface-container border border-outline-variant/30 peer-checked:border-primary peer-checked:bg-primary/5 transition-all text-center flex flex-col justify-center items-center h-full">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined">person</span>
+</div>
+<span class="font-headline-sm text-body-lg text-on-surface">Samuel Kariuki</span>
+<span class="font-label-sm text-label-sm text-outline mt-1 uppercase tracking-wider">Creative Director</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" name="selected_barber" onchange="updateSummary()" type="radio" value="David Ochieng"/>
+<div class="p-space-md bg-surface-container border border-outline-variant/30 peer-checked:border-primary peer-checked:bg-primary/5 transition-all text-center flex flex-col justify-center items-center h-full">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined">person</span>
+</div>
+<span class="font-headline-sm text-body-lg text-on-surface">David Ochieng</span>
+<span class="font-label-sm text-label-sm text-outline mt-1 uppercase tracking-wider">Resident Artisan</span>
+</div>
+</label>
+</div>
+<div class="flex justify-between pt-space-md">
+<button class="px-6 py-3 border border-outline-variant/40 text-on-surface font-label-md text-label-md uppercase tracking-wider hover:border-primary transition-colors" onclick="goToStep(1)" type="button">
+                Back
+              </button>
+<button class="px-8 py-3 bg-primary text-on-primary font-label-lg text-label-lg uppercase tracking-wider hover:bg-secondary transition-colors" onclick="goToStep(3)" type="button">
+                Continue to Schedule
+              </button>
+</div>
+</div>
+<!-- STEP 3: SANCTUARY LOCATION, DATE & TIME -->
+<div class="space-y-space-md hidden" id="booking-step-3">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Atelier Location &amp; Time Slot</h3>
+<!-- Location Switch -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<label class="cursor-pointer">
+<input checked="" class="sr-only peer" name="selected_sanctuary" onchange="updateSummary()" type="radio" value="The Westlands Atelier"/>
+<div class="p-space-md bg-surface-container border border-outline-variant/30 peer-checked:border-primary peer-checked:bg-primary/5 transition-all">
+<span class="font-headline-sm text-body-lg text-on-surface block">The Westlands Atelier</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Villa Rosa Kempinski, 2nd Floor</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" name="selected_sanctuary" onchange="updateSummary()" type="radio" value="The Karen Sanctuary"/>
+<div class="p-space-md bg-surface-container border border-outline-variant/30 peer-checked:border-primary peer-checked:bg-primary/5 transition-all">
+<span class="font-headline-sm text-body-lg text-on-surface block">The Karen Sanctuary</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">The Hub, Karen Country Wing</span>
+</div>
+</label>
+</div>
+<!-- Date Picker Ribbon -->
+<div class="pt-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-2">Select Preferred Date (October)</span>
+<div class="grid grid-cols-4 sm:grid-cols-7 gap-2 text-center" id="date-selector-grid">
+<label class="cursor-pointer">
+<input checked="" class="sr-only peer" name="selected_date" onchange="updateSummary()" type="radio" value="Wed, Oct 23"/>
+<div class="p-2.5 bg-surface-container border border-outline-variant/30 peer-checked:border-primary peer-checked:bg-primary peer-checked:text-on-primary transition-all">
+<span class="block font-label-sm text-label-sm uppercase">Wed</span>
+<span class="font-headline-sm text-headline-sm font-serif">23</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" name="selected_date" onchange="updateSummary()" type="radio" value="Thu, Oct 24"/>
+<div class="p-2.5 bg-surface-container border border-outline-variant/30 peer-checked:border-primary peer-checked:bg-primary peer-checked:text-on-primary transition-all">
+<span class="block font-label-sm text-label-sm uppercase">Thu</span>
+<span class="font-headline-sm text-headline-sm font-serif">24</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" name="selected_date" onchange="updateSummary()" type="radio" value="Fri, Oct 25"/>
+<div class="p-2.5 bg-surface-container border border-outline-variant/30 peer-checked:border-primary peer-checked:bg-primary peer-checked:text-on-primary transition-all">
+<span class="block font-label-sm text-label-sm uppercase">Fri</span>
+<span class="font-headline-sm text-headline-sm font-serif">25</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" name="selected_date" onchange="updateSummary()" type="radio" value="Sat, Oct 26"/>
+<div class="p-2.5 bg-surface-container border border-outline-variant/30 peer-checked:border-primary peer-checked:bg-primary peer-checked:text-on-primary transition-all">
+<span class="block font-label-sm text-label-sm uppercase">Sat</span>
+<span class="font-headline-sm text-headline-sm font-serif">26</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" name="selected_date" onchange="updateSummary()" type="radio" value="Sun, Oct 27"/>
+<div class="p-2.5 bg-surface-container border border-outline-variant/30 peer-checked:border-primary peer-checked:bg-primary peer-checked:text-on-primary transition-all">
+<span class="block font-label-sm text-label-sm uppercase">Sun</span>
+<span class="font-headline-sm text-headline-sm font-serif">27</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" name="selected_date" onchange="updateSummary()" type="radio" value="Mon, Oct 28"/>
+<div class="p-2.5 bg-surface-container border border-outline-variant/30 peer-checked:border-primary peer-checked:bg-primary peer-checked:text-on-primary transition-all">
+<span class="block font-label-sm text-label-sm uppercase">Mon</span>
+<span class="font-headline-sm text-headline-sm font-serif">28</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" name="selected_date" onchange="updateSummary()" type="radio" value="Tue, Oct 29"/>
+<div class="p-2.5 bg-surface-container border border-outline-variant/30 peer-checked:border-primary peer-checked:bg-primary peer-checked:text-on-primary transition-all">
+<span class="block font-label-sm text-label-sm uppercase">Tue</span>
+<span class="font-headline-sm text-headline-sm font-serif">29</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Time Slots -->
+<div class="pt-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-2">Available Time Windows</span>
+<div class="grid grid-cols-2 sm:grid-cols-5 gap-2">
+<label class="cursor-pointer">
+<input checked="" class="sr-only peer" name="selected_time" onchange="updateSummary()" type="radio" value="10:00 AM"/>
+<div class="py-2.5 px-3 bg-surface-container text-center border border-outline-variant/30 peer-checked:border-primary peer-checked:bg-primary peer-checked:text-on-primary transition-all">
+<span class="font-label-md text-label-md tracking-wider">10:00 AM</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" name="selected_time" onchange="updateSummary()" type="radio" value="11:30 AM"/>
+<div class="py-2.5 px-3 bg-surface-container text-center border border-outline-variant/30 peer-checked:border-primary peer-checked:bg-primary peer-checked:text-on-primary transition-all">
+<span class="font-label-md text-label-md tracking-wider">11:30 AM</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" name="selected_time" onchange="updateSummary()" type="radio" value="02:00 PM"/>
+<div class="py-2.5 px-3 bg-surface-container text-center border border-outline-variant/30 peer-checked:border-primary peer-checked:bg-primary peer-checked:text-on-primary transition-all">
+<span class="font-label-md text-label-md tracking-wider">02:00 PM</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" name="selected_time" onchange="updateSummary()" type="radio" value="04:30 PM"/>
+<div class="py-2.5 px-3 bg-surface-container text-center border border-outline-variant/30 peer-checked:border-primary peer-checked:bg-primary peer-checked:text-on-primary transition-all">
+<span class="font-label-md text-label-md tracking-wider">04:30 PM</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" name="selected_time" onchange="updateSummary()" type="radio" value="06:00 PM"/>
+<div class="py-2.5 px-3 bg-surface-container text-center border border-outline-variant/30 peer-checked:border-primary peer-checked:bg-primary peer-checked:text-on-primary transition-all">
+<span class="font-label-md text-label-md tracking-wider">06:00 PM</span>
+</div>
+</label>
+</div>
+</div>
+<div class="flex justify-between pt-space-md">
+<button class="px-6 py-3 border border-outline-variant/40 text-on-surface font-label-md text-label-md uppercase tracking-wider hover:border-primary transition-colors" onclick="goToStep(2)" type="button">
+                Back
+              </button>
+<button class="px-8 py-3 bg-primary text-on-primary font-label-lg text-label-lg uppercase tracking-wider hover:bg-secondary transition-colors" onclick="goToStep(4)" type="button">
+                Gentleman Details
+              </button>
+</div>
+</div>
+<!-- STEP 4: GENTLEMAN DETAILS & CONFIRMATION -->
+<div class="space-y-space-md hidden" id="booking-step-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Client Dossier &amp; Preferences</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="space-y-space-xs">
+<label class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Full Name</label>
+<input class="w-full bg-surface-container border border-outline-variant/40 px-4 py-3 text-on-surface placeholder:text-outline font-body-sm focus:outline-none focus:border-primary" id="cust-name" placeholder="e.g. Alistair Kimani" required="" type="text"/>
+</div>
+<div class="space-y-space-xs">
+<label class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Telephone / WhatsApp</label>
+<input class="w-full bg-surface-container border border-outline-variant/40 px-4 py-3 text-on-surface placeholder:text-outline font-body-sm focus:outline-none focus:border-primary" id="cust-phone" placeholder="+254 7XX XXX XXX" required="" type="tel"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="space-y-space-xs">
+<label class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Direct Email Address</label>
+<input class="w-full bg-surface-container border border-outline-variant/40 px-4 py-3 text-on-surface placeholder:text-outline font-body-sm focus:outline-none focus:border-primary" id="cust-email" placeholder="executive@domain.co.ke" required="" type="email"/>
+</div>
+<div class="space-y-space-xs">
+<label class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Complimentary Beverage Ritual</label>
+<select class="w-full bg-surface-container border border-outline-variant/40 px-4 py-3 text-on-surface font-body-sm focus:outline-none focus:border-primary" id="cust-beverage">
+<option value="Single-Malt Scotch Whisky">Aged Single-Malt Scotch Whisky (18 Yrs)</option>
+<option value="Kenyan Arabica Pour-Over">Mount Kenya Single-Origin Pour-Over</option>
+<option value="San Pellegrino &amp; Lime">Sparkling Mineral Water &amp; Fresh Lime</option>
+<option value="None">No Beverage Preferred</option>
+</select>
+</div>
+</div>
+<!-- Bespoke Order Summary Card -->
+<div class="p-space-md bg-surface-container border border-primary/20 space-y-space-xs mt-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold">Appointment Dossier Summary</span>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-xs text-on-surface-variant font-body-sm pt-1">
+<div>
+<span class="text-outline text-label-sm uppercase tracking-wider block">Ritual</span>
+<span class="text-on-surface font-medium" id="summary-service">The Royal Sovereign</span>
+</div>
+<div>
+<span class="text-outline text-label-sm uppercase tracking-wider block">Artisan</span>
+<span class="text-on-surface font-medium" id="summary-barber">Brian Mwangi</span>
+</div>
+<div>
+<span class="text-outline text-label-sm uppercase tracking-wider block">Location</span>
+<span class="text-on-surface font-medium" id="summary-suite">The Westlands Atelier</span>
+</div>
+<div>
+<span class="text-outline text-label-sm uppercase tracking-wider block">Slot</span>
+<span class="text-on-surface font-medium" id="summary-slot">Wed, Oct 23 @ 10:00 AM</span>
+</div>
+</div>
+<div class="flex justify-between items-center pt-space-xs border-t border-outline-variant/20 mt-space-xs">
+<span class="font-label-md text-label-md uppercase tracking-wider text-outline">Total Tariff:</span>
+<span class="font-headline-sm text-headline-sm text-primary font-serif" id="summary-price">KES 7,500</span>
+</div>
+</div>
+<div class="flex justify-between pt-space-md">
+<button class="px-6 py-3 border border-outline-variant/40 text-on-surface font-label-md text-label-md uppercase tracking-wider hover:border-primary transition-colors" onclick="goToStep(3)" type="button">
+                Back
+              </button>
+<button class="px-10 py-3.5 bg-primary text-on-primary font-label-lg text-label-lg uppercase tracking-widest hover:bg-secondary transition-all duration-300 shadow-md" type="submit">
+                Confirm Bespoke Appointment
+              </button>
+</div>
+</div>
+<!-- SUCCESS CONFIRMATION MODAL -->
+<div class="hidden text-center py-space-xl space-y-space-md" id="booking-success">
+<div class="w-16 h-16 rounded-full bg-primary/20 text-primary mx-auto flex items-center justify-center border border-primary/40">
+<span class="material-symbols-outlined text-3xl">check</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Appointment Secured</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto">
+              Your appointment is logged with our concierge. A discreet digital calendar invitation has been sent along with valet access instructions.
+            </p>
+<div class="pt-space-sm">
+<button class="px-8 py-3 border border-primary/40 text-primary font-label-md text-label-md uppercase tracking-wider hover:bg-primary hover:text-on-primary transition-colors" onclick="resetBookingForm()" type="button">
+                Book Another Chair
+              </button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- REPUTATION & PATRON TESTIMONIALS -->
+<section class="w-full py-space-xl bg-background border-t border-outline-variant/20">
+<div class="w-full px-margin-sm lg:px-margin-lg max-w-6xl mx-auto">
+<div class="text-center max-w-2xl mx-auto mb-space-xl space-y-space-xs">
+<span class="font-label-md text-label-md uppercase tracking-[0.2em] text-primary">Patron Accolades</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Endorsed by Discerning Gentlemen</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-lg">
+<div class="p-space-lg bg-surface-container border border-outline-variant/30 flex flex-col justify-between">
+<div class="space-y-space-md">
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">
+              “True Barbers brings a level of Mayfair elegance straight to Nairobi. The hot towel shave and whisky ritual before board meetings is non-negotiable.”
+            </p>
+</div>
+<div class="pt-space-md border-t border-outline-variant/20 mt-space-md">
+<span class="font-headline-sm text-body-lg text-on-surface block">Githinji Ndung’u</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Managing Partner, Private Equity</span>
+</div>
+</div>
+<div class="p-space-lg bg-surface-container border border-outline-variant/30 flex flex-col justify-between">
+<div class="space-y-space-md">
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">
+              “Discretion is unmatched. Their private room in Westlands provides absolute peace and surgical haircut precision that withstands international travel.”
+            </p>
+</div>
+<div class="pt-space-md border-t border-outline-variant/20 mt-space-md">
+<span class="font-headline-sm text-body-lg text-on-surface block">Hon. Tariq Al-Hassan</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Senior Diplomatic Attache</span>
+</div>
+</div>
+<div class="p-space-lg bg-surface-container border border-outline-variant/30 flex flex-col justify-between">
+<div class="space-y-space-md">
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">
+              “Brian and Samuel are masters of their craft. The attention to beard line symmetry and scalping massages are second to none in Sub-Saharan Africa.”
+            </p>
+</div>
+<div class="pt-space-md border-t border-outline-variant/20 mt-space-md">
+<span class="font-headline-sm text-body-lg text-on-surface block">Kiprotich Sang</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Tech Founder &amp; Angel Investor</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- LOCATIONS & PRIVATE SANCTUARIES -->
+<section class="w-full py-space-xl bg-surface-container-lowest border-t border-outline-variant/20">
+<div class="w-full px-margin-sm lg:px-margin-lg max-w-6xl mx-auto">
+<div class="text-center max-w-2xl mx-auto mb-space-xl space-y-space-xs">
+<span class="font-label-md text-label-md uppercase tracking-[0.2em] text-primary">The Sanctuary Network</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Dual Flagship Residences</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Strategically situated in Nairobi’s most prestigious enclaves with complimentary valet.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-lg">
+<!-- Location 1 -->
+<div class="p-space-lg bg-surface-container border border-outline-variant/30 flex flex-col justify-between">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest font-semibold">Flagship Residence</span>
+<span class="font-label-sm text-label-sm bg-surface-container-highest px-2 py-0.5 text-on-surface">Valet Ready</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">The Westlands Suite</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Delta Corner Annex • Ring Road Westlands, Nairobi. Positioned adjacent to the executive business hub.
+            </p>
+<div class="pt-space-xs space-y-1 font-body-sm text-body-sm text-outline">
+<p><strong class="text-on-surface">Mon – Sat:</strong> 08:00 AM – 08:00 PM</p>
+<p><strong class="text-on-surface">Sunday:</strong> 10:00 AM – 06:00 PM</p>
+<p><strong class="text-on-surface">Concierge:</strong> +254 700 882 783</p>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md border-t border-outline-variant/20 flex gap-space-sm">
+<a class="w-full py-2.5 text-center bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-secondary transition-colors" href="#booking-experience">
+              Reserve Westlands
+            </a>
+</div>
+</div>
+<!-- Location 2 -->
+<div class="p-space-lg bg-surface-container border border-outline-variant/30 flex flex-col justify-between">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest font-semibold">Country Atelier</span>
+<span class="font-label-sm text-label-sm bg-surface-container-highest px-2 py-0.5 text-on-surface">Private Parking</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">The Karen Sanctuary</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              The Hub • Karen Country Wing, Dagoretti &amp; Ngong Road, Nairobi. An expansive woodland-inspired oasis.
+            </p>
+<div class="pt-space-xs space-y-1 font-body-sm text-body-sm text-outline">
+<p><strong class="text-on-surface">Mon – Sat:</strong> 08:30 AM – 08:30 PM</p>
+<p><strong class="text-on-surface">Sunday:</strong> 09:30 AM – 06:30 PM</p>
+<p><strong class="text-on-surface">Concierge:</strong> +254 711 993 844</p>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md border-t border-outline-variant/20 flex gap-space-sm">
+<a class="w-full py-2.5 text-center bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-secondary transition-colors" href="#booking-experience">
+              Reserve Karen
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  function goToStep(stepNumber) {
+    // Hide all step sections
+    for (let i = 1; i <= 4; i++) {
+      const stepElem = document.getElementById('booking-step-' + i);
+      const tabElem = document.getElementById('step-tab-' + i);
+      if (stepElem) stepElem.classList.add('hidden');
+      if (tabElem) {
+        const stepSpan = tabElem.querySelector('span:first-child');
+        const titleSpan = tabElem.querySelector('span:last-child');
+        if (i === stepNumber) {
+          stepSpan.className = 'font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold';
+          titleSpan.className = 'font-body-sm text-body-sm text-on-surface font-medium truncate';
+        } else if (i < stepNumber) {
+          stepSpan.className = 'font-label-sm text-label-sm uppercase tracking-widest text-secondary font-medium';
+          titleSpan.className = 'font-body-sm text-body-sm text-on-surface-variant font-medium truncate';
+        } else {
+          stepSpan.className = 'font-label-sm text-label-sm uppercase tracking-widest text-outline';
+          titleSpan.className = 'font-body-sm text-body-sm text-on-surface-variant font-medium truncate';
+        }
+      }
+    }
+    const currentStepElem = document.getElementById('booking-step-' + stepNumber);
+    if (currentStepElem) currentStepElem.classList.remove('hidden');
+    updateSummary();
+  }
 
-    <section id="services" class="grid">
-      <div class="card">
-        <div class="card-num">SERVICE 01</div>
-        <h3>The Executive Cut</h3>
-        <div class="card-meta">
-          <span>45 Minutes</span>
-          <span class="card-price">KES 2,500</span>
-        </div>
-        <p>Tailored scissor cut, razor edge finish, scalp massage, and organic cedarwood finishing oil.</p>
-        <button class="btn-gold" style="width:100%;" onclick="alert('Demo: Appointment booking selected for Executive Cut.');">Select Service</button>
-      </div>
+  function updateSummary() {
+    const selectedService = document.querySelector('input[name="selected_service"]:checked');
+    const selectedBarber = document.querySelector('input[name="selected_barber"]:checked');
+    const selectedSanctuary = document.querySelector('input[name="selected_sanctuary"]:checked');
+    const selectedDate = document.querySelector('input[name="selected_date"]:checked');
+    const selectedTime = document.querySelector('input[name="selected_time"]:checked');
 
-      <div class="card">
-        <div class="card-num">SERVICE 02</div>
-        <h3>Royal Hot Towel Shave</h3>
-        <div class="card-meta">
-          <span>40 Minutes</span>
-          <span class="card-price">KES 2,000</span>
-        </div>
-        <p>Pre-shave eucalyptus steam, triple hot towel wrap, straight razor shave, and soothing sandalwood balm.</p>
-        <button class="btn-gold" style="width:100%;" onclick="alert('Demo: Appointment booking selected for Royal Shave.');">Select Service</button>
-      </div>
+    if (selectedService) {
+      document.getElementById('summary-service').textContent = selectedService.value;
+      const price = Number(selectedService.getAttribute('data-price')).toLocaleString();
+      document.getElementById('summary-price').textContent = 'KES ' + price;
+    }
+    if (selectedBarber) {
+      document.getElementById('summary-barber').textContent = selectedBarber.value;
+    }
+    if (selectedSanctuary) {
+      document.getElementById('summary-suite').textContent = selectedSanctuary.value;
+    }
+    if (selectedDate && selectedTime) {
+      document.getElementById('summary-slot').textContent = selectedDate.value + ' @ ' + selectedTime.value;
+    }
+  }
 
-      <div class="card">
-        <div class="card-num">SERVICE 03</div>
-        <h3>Beard Architecture</h3>
-        <div class="card-meta">
-          <span>35 Minutes</span>
-          <span class="card-price">KES 1,800</span>
-        </div>
-        <p>Geometric beard sculpting, cheek line definition, nourishing shea butter treatment, and hot comb taper.</p>
-        <button class="btn-gold" style="width:100%;" onclick="alert('Demo: Appointment booking selected for Beard Architecture.');">Select Service</button>
-      </div>
-    </section>
+  function selectServiceFromCard(serviceName, price, duration) {
+    const radio = document.querySelector(`input[name="selected_service"][value="${serviceName}"]`);
+    if (radio) {
+      radio.checked = true;
+    }
+    const target = document.getElementById('booking-experience');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+    goToStep(2);
+  }
 
-    <section class="branch-bar">
-      <div class="branch">
-        <h4>Westlands Lounge</h4>
-        <p>Delta Corner Tower, 4th Floor<br>Daily 8:00 AM – 9:00 PM</p>
-      </div>
-      <div class="branch">
-        <h4>Kilimani Lounge</h4>
-        <p>Adlife Plaza, Ground Wing<br>Daily 8:30 AM – 9:30 PM</p>
-      </div>
-      <div class="branch">
-        <h4>Private VIP Valet</h4>
-        <p>Private grooming suites available<br>By advance reservation only</p>
-      </div>
-    </section>
-  </main>
+  function selectBarberFromCard(barberName) {
+    const radio = document.querySelector(`input[name="selected_barber"][value="${barberName}"]`);
+    if (radio) {
+      radio.checked = true;
+    }
+    const target = document.getElementById('booking-experience');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+    goToStep(3);
+  }
 
-  <footer>
-    <p>&copy; 2026 True Barbers Nairobi. Concept preview prepared for portfolio review.</p>
-  </footer>
-</body>
-</html>
+  function handleReservationSubmit(e) {
+    e.preventDefault();
+    document.getElementById('booking-step-4').classList.add('hidden');
+    document.getElementById('booking-success').classList.remove('hidden');
+  }
+
+  function resetBookingForm() {
+    document.getElementById('booking-form').reset();
+    document.getElementById('booking-success').classList.add('hidden');
+    goToStep(1);
+  }
+</script></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant/30 text-on-surface"><div class="w-full px-margin-sm lg:px-margin-lg py-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-gutter-lg"><div class="lg:col-span-4 flex flex-col gap-space-md"><div class="flex items-center gap-space-md"><span class="font-headline-md text-headline-md text-primary tracking-wide uppercase">True Barbers</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">An exclusive gentleman's grooming sanctuary in Nairobi, uniting time-honored artisanal barbering traditions with refined African hospitality.</p><div class="mt-space-sm flex flex-col gap-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Membership &amp; Enquiries</span><span class="font-body-sm text-body-sm text-on-surface">concierge@truebarbers.co.ke</span></div></div><div class="lg:col-span-3 flex flex-col gap-space-md"><span class="font-label-lg text-label-lg uppercase tracking-widest text-primary">Atelier Residences</span><div class="flex flex-col gap-space-sm"><div class="flex flex-col"><span class="font-body-md text-body-md text-on-surface font-semibold">The Westlands Suite</span><span class="font-body-sm text-body-sm text-on-surface-variant">Villa Rosa Kempinski, 2nd Floor</span><span class="font-body-sm text-body-sm text-outline">Mon - Sat: 08:00 - 20:00 | Sun: 10:00 - 18:00</span></div><div class="flex flex-col pt-space-xs"><span class="font-body-md text-body-md text-on-surface font-semibold">The Karen Sanctuary</span><span class="font-body-sm text-body-sm text-on-surface-variant">The Hub, Karen Country Wing</span><span class="font-body-sm text-body-sm text-outline">Mon - Sun: 09:00 - 21:00</span></div></div></div><div class="lg:col-span-2 flex flex-col gap-space-md"><span class="font-label-lg text-label-lg uppercase tracking-widest text-primary">Sanctuary Protocol</span><ul class="flex flex-col gap-space-xs"><li class="font-body-sm text-body-sm text-on-surface-variant">Whisky Lounge Service</li><li class="font-body-sm text-body-sm text-on-surface-variant">Bespoke Hot Towel Rituals</li><li class="font-body-sm text-body-sm text-on-surface-variant">Private Cigar Terrace</li><li class="font-body-sm text-body-sm text-on-surface-variant">Executive Master Club</li><li class="font-body-sm text-body-sm text-on-surface-variant">Valet Grooming Logistics</li></ul></div><div class="lg:col-span-3 flex flex-col gap-space-md"><span class="font-label-lg text-label-lg uppercase tracking-widest text-primary">Private Gazette</span><p class="font-body-sm text-body-sm text-on-surface-variant">Join our closed correspondence for private allocations, master masterclasses, and curated grooming provisions.</p><form class="flex flex-col gap-space-xs"><div class="flex items-center bg-surface-container border border-outline-variant/40"><input class="bg-transparent px-3 py-2 text-on-surface placeholder:text-outline text-body-sm font-body-sm focus:outline-none w-full" placeholder="Gentleman's email..." type="email"/><button class="px-4 py-2 bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-secondary transition-colors" type="button">Enroll</button></div><span class="font-label-sm text-label-sm text-outline">Discretion guaranteed. No solicitation.</span></form></div></div><div class="mt-space-xl pt-space-md border-t border-outline-variant/20 flex flex-col md:flex-row items-center justify-between gap-space-sm text-outline"><span class="font-body-sm text-body-sm">© 2025 True Barbers Grooming Atelier Nairobi. All Rights Reserved.</span><div class="flex items-center gap-space-lg"><span class="font-label-sm text-label-sm uppercase tracking-widest">Confidentiality</span><span class="font-label-sm text-label-sm uppercase tracking-widest">Concierge Terms</span><span class="font-label-sm text-label-sm uppercase tracking-widest">Private Membership</span></div></div></div></footer><div id="cd" style="position:fixed;top:6px;left:50%;transform:translateX(-50%);z-index:99999;background:#000c;color:#fff;font:12px system-ui;padding:4px 12px;border-radius:99px;border:1px solid #444;">Concept demo</div><script>document.addEventListener('click',function(e){var a=e.target.closest('a[href="#"][data-path]');if(a){e.preventDefault();var d=document.getElementById('cd');d.textContent='Demo: this page is not included';setTimeout(function(){d.textContent='Concept demo'},2000)}})</script></body></html>
