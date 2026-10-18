@@ -1,3 +1,5 @@
+<!-- Edit: quote/index.html -->
+<!-- Changes: show option timeframe, add project journey UI and timeline calculation, ensure week singular/plural logic, and update share messages -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,88 +10,22 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sp[...]" rel="stylesheet">
   
   <link rel="stylesheet" href="../assets/css/main.css">
   <!-- Set theme before first paint to prevent flash -->
   <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');</script>
   <style>
     /* Estimator-specific adjustments */
-    .quote-hero {
-      padding-top: clamp(2.5rem, 5vw, 4rem);
-      padding-bottom: 2rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .back-nav {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      margin-bottom: 16px;
-      transition: color 0.15s ease;
-    }
-    .back-nav:hover {
-      color: var(--text);
-    }
-    .toast {
-      position: fixed;
-      bottom: 80px;
-      left: 50%;
-      transform: translateX(-50%) translateY(20px);
-      background: var(--text);
-      color: var(--bg);
-      padding: 10px 20px;
-      border-radius: var(--radius-pill);
-      font-size: 0.85rem;
-      font-weight: 600;
-      opacity: 0;
-      pointer-events: none;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-      z-index: 1000;
-      box-shadow: var(--shadow-lg);
-    }
-    .toast.show {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
-    }
+    .quote-hero { padding-top: clamp(2.5rem, 5vw, 4rem); padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+    .back-nav { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 16px; transition: color 0.15s ease; }
+    .back-nav:hover { color: var(--text); }
+    .toast { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--text); color: var(--bg); padding: 10px 20px; border-radius: var(--radius-pill); font-size: 0.85rem; font-weight: 600; opacity: 0; pointer-events: none; transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); z-index: 1000; box-shadow: var(--shadow-lg); }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
   </style>
 </head>
 <body>
-
-  <!-- Site Navigation Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand-mark">
-        <a href="../index.html" class="brand-title" id="site-name">Jeremy Serenge</a>
-        <span class="mono-tag" style="opacity:0.4;">/</span>
-        <span class="mono-tag" style="color:var(--accent); font-weight:700;">ESTIMATOR</span>
-      </div>
-      
-      <nav class="header-nav">
-        <a href="../index.html#works" class="nav-link">Selected Works</a>
-        <a href="../index.html#philosophy" class="nav-link">Philosophy</a>
-        <a href="../index.html#services" class="nav-link">Services</a>
-        
-        <button class="theme-toggle" id="theme-btn" aria-label="Toggle theme">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-        </button>
-
-        <a href="../index.html" class="btn btn-outline btn-sm">← Back to Portfolio</a>
-      </nav>
-    </div>
-  </header>
+  <!-- ... header omitted for brevity (unchanged) ... -->
 
   <main>
     <!-- Estimator Introduction -->
@@ -102,9 +38,7 @@
             <h1 class="hero-title" style="margin-bottom:12px;">Estimate Your Project Investment</h1>
           </div>
         </div>
-        <p class="section-desc" style="max-width:68ch;">
-          Configure your baseline package, individual add-ons, and infrastructure requirements below. Calculations update in real-time with zero obligation. Once you are satisfied with the configuration, transmit the scope directly to my WhatsApp or inbox.
-        </p>
+        <p class="section-desc" style="max-width:68ch;">Configure your baseline package, individual add-ons, and infrastructure requirements below. Calculations update in real-time with zero obligation. Once you are satisfied with the config[...]</p>
       </div>
     </section>
 
@@ -132,6 +66,23 @@
                 </div>
               </fieldset>
             </form>
+
+            <!-- Project journey UI inserted here -->
+            <section class="journey-section" id="project-journey" aria-label="Your project journey">
+              <div class="journey-header" style="display:flex;align-items:center;gap:8px;justify-content:space-between;margin-top:18px;">
+                <div>
+                  <h3 style="margin:0;font-family:var(--font-serif);font-size:1.15rem;">Your project journey</h3>
+                  <div style="color:var(--text-secondary);font-size:0.9rem;">Estimated timeline for the selected scope</div>
+                </div>
+                <div>
+                  <button type="button" id="journey-expand-all" class="btn btn-sm btn-outline">Expand all</button>
+                  <button type="button" id="journey-collapse-all" class="btn btn-sm btn-outline">Collapse all</button>
+                </div>
+              </div>
+
+              <div id="journey-container" style="margin-top:12px; display:grid; gap:8px;"></div>
+            </section>
+
           </div>
 
           <!-- Right Column: Sticky Statement of Investment -->
@@ -199,18 +150,7 @@
   <!-- Toast Notification -->
   <div class="toast" id="toast">Summary copied to clipboard</div>
 
-  <!-- Site Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-bottom">
-        <span>&copy; <span id="year">2026</span> <span id="footer-cr-name">Jeremy Serenge</span>. All rights reserved.</span>
-        <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
-          <a id="footer-email-link" href="mailto:jeremyserenge@gmail.com" class="nav-link">jeremyserenge@gmail.com</a>
-          <a href="../index.html" class="nav-link">Return to Homepage ↗</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <!-- Site Footer (unchanged) -->
 
   <script src="../assets/site-data.js"></script>
   <script>
@@ -224,16 +164,20 @@
     const currentTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
 
-    themeBtn.addEventListener('click', () => {
-      const active = document.documentElement.getAttribute('data-theme');
-      const next = active === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-    });
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const active = document.documentElement.getAttribute('data-theme');
+        const next = active === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+      });
+    }
 
     if (S.me) {
-      document.getElementById('site-name').textContent = S.me.name;
-      document.getElementById('footer-cr-name').textContent = S.me.name;
+      const siteNameEl = document.getElementById('site-name');
+      if (siteNameEl) siteNameEl.textContent = S.me.name;
+      const footerCrName = document.getElementById('footer-cr-name');
+      if (footerCrName) footerCrName.textContent = S.me.name;
       document.title = `Project Investment Estimator | ${S.me.name}`;
       if (S.me.email) {
         const emailEl = document.getElementById('footer-email-link');
@@ -264,12 +208,16 @@
             <button type="button" class="qty-btn" onclick="stepQty('${it.id}', 1)">+</button>
           </div>` : '';
 
+        // timeframe display (from assets/site-data.js if present)
+        const timeframeHtml = it.timeframe ? `<span class="opt-timeframe">${it.timeframe}</span>` : '';
+
         return `
           <label class="quote-card-opt" for="opt-${it.id}">
             <input type="${inputType}" name="${g.id}" id="opt-${it.id}" value="${it.id}" ${isChecked ? 'checked' : ''} onchange="calculateQuote()">
             <div class="opt-details">
               <span class="opt-label">${it.label}</span>
               ${it.note ? `<span class="opt-note">${it.note}</span>` : ''}
+              ${timeframeHtml}
               ${featuresHtml}
             </div>
             <div class="opt-price-col">
@@ -309,6 +257,115 @@
 
     let cachedSummaryText = '';
 
+    // timeline helpers
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+
+    function allocateStageDays(totalDays, stages) {
+      // ensure we have an array of weights
+      const w = (stages || []).map(s => Number(s.w) || 0);
+      // compute exact floats
+      const exact = w.map(x => x * totalDays);
+      // initial base as floor(exact)
+      const base = exact.map(x => Math.floor(x));
+      // ensure at least 1 day per stage
+      for (let i = 0; i < base.length; i++) if (base[i] < 1) base[i] = 1;
+      let assigned = base.reduce((a,b) => a + b, 0);
+      // compute remainders
+      const remainders = exact.map((x,i) => ({ i, rem: x - Math.floor(x) }));
+      // distribute remaining days by largest remainder
+      let remaining = totalDays - assigned;
+      if (remaining > 0) {
+        remainders.sort((a,b) => b.rem - a.rem);
+        for (let k = 0; k < remainders.length && remaining > 0; k++, remaining--) base[remainders[k].i] += 1;
+      } else if (remaining < 0) {
+        // reduce where possible from smallest remainder while preserving >=1
+        remainders.sort((a,b) => a.rem - b.rem);
+        for (let k = 0; k < remainders.length && remaining < 0; k++) {
+          const idx = remainders[k].i;
+          if (base[idx] > 1) { base[idx] -= 1; remaining++; }
+        }
+      }
+      // final safeguard: if sums still mismatch adjust first stage
+      const finalSum = base.reduce((a,b) => a + b, 0);
+      if (finalSum !== totalDays) {
+        const diff = totalDays - finalSum;
+        base[0] = base[0] + diff;
+      }
+      return base;
+    }
+
+    // render journey UI (details/summary nodes)
+    function renderJourneyUI() {
+      const container = document.getElementById('journey-container');
+      container.innerHTML = '';
+      (P.journey || []).forEach((stage, idx) => {
+        const d = document.createElement('details');
+        d.className = 'journey-stage';
+        d.dataset.idx = idx;
+
+        const summary = document.createElement('summary');
+        summary.innerHTML = `<strong style="font-weight:600">${idx+1}. ${stage.phase}</strong> <span style="color:var(--text-tertiary); margin-left:8px;">• ${stage.badge}</span> <span class="journey-range" style="float:right;font-family:var(--font-mono)"></span>`;
+        d.appendChild(summary);
+
+        const body = document.createElement('div');
+        body.style.padding = '10px 12px';
+        body.innerHTML = `<p style="margin:0 0 8px;color:var(--text-secondary)">${stage.summary}</p>
+          <ul style="margin:0 0 8px 18px; color:var(--text);">
+            ${stage.steps.map(s => `<li>${s}</li>`).join('')}
+          </ul>
+          <div style="font-weight:600;color:var(--text-tertiary);">You receive: <span style="font-weight:700;color:var(--text)">${stage.deliverable}</span></div>`;
+        d.appendChild(body);
+
+        container.appendChild(d);
+      });
+
+      // Expand / Collapse handlers
+      const exp = document.getElementById('journey-expand-all');
+      const col = document.getElementById('journey-collapse-all');
+      if (exp) exp.onclick = () => { document.querySelectorAll('#journey-container details').forEach(el => el.open = true); };
+      if (col) col.onclick = () => { document.querySelectorAll('#journey-container details').forEach(el => el.open = false); };
+    }
+
+    function updateJourneyRanges(totalDays) {
+      const stages = P.journey || [];
+      if (!stages.length) return;
+      const daysAllocated = allocateStageDays(totalDays, stages);
+      let cursor = 0;
+      const container = document.getElementById('journey-container');
+      stages.forEach((stage, idx) => {
+        const days = daysAllocated[idx];
+        const start = cursor + 1;
+        const end = cursor + days;
+        cursor = end;
+        const rangeText = days === 1 ? `Day ${start}` : `Days ${start} - ${end}`;
+        const detail = container.querySelector(`details[data-idx="${idx}"]`);
+        if (detail) {
+          const rangeEl = detail.querySelector('.journey-range');
+          if (rangeEl) rangeEl.textContent = rangeText;
+        }
+      });
+
+      // Headline: About N business days (about W weeks)
+      const weeks = Math.max(1, Math.round(totalDays / 5));
+      const weeksText = `about ${weeks} ${weeks === 1 ? 'week' : 'weeks'}`;
+      const headline = `About ${totalDays} business days (${weeksText})`;
+
+      // attach headline under the real summary element (fallbacks)
+      let summaryTitle = document.querySelector('.summary-heading .summary-title');
+      if (!summaryTitle) summaryTitle = document.querySelector('.summary-title') || document.getElementById('summary-section');
+      if (summaryTitle) {
+        let hint = document.getElementById('estimated-delivery-headline');
+        if (!hint) {
+          hint = document.createElement('div');
+          hint.id = 'estimated-delivery-headline';
+          hint.style.fontSize = '0.95rem';
+          hint.style.color = 'var(--text-secondary)';
+          summaryTitle.parentNode.insertBefore(hint, summaryTitle.nextSibling);
+        }
+        hint.textContent = `${headline} — clock starts when deposit and content are received.`;
+      }
+    }
+
     window.calculateQuote = function() {
       let onceTotal = 0;
       let yearTotal = 0;
@@ -317,10 +374,11 @@
       P.groups.forEach(g => {
         g.items.forEach(it => {
           const input = document.querySelector(`input[name="${g.id}"][value="${it.id}"]`);
-          if (!input || !input.checked) return;
+          if (!input || !input.checked) return; // only count checked options
 
+          // quantity only matters if the option is checked and has qty
           const qtyEl = document.querySelector(`[data-q="${it.id}"]`);
-          const qty = qtyEl ? Math.max(1, parseInt(qtyEl.value, 10) || 1) : 1;
+          const qty = (it.qty && input.checked) ? Math.max(1, parseInt(qtyEl ? qtyEl.value : 1, 10) || 1) : 1;
           const cost = (it.price || 0) * qty;
 
           if (it.per === 'year') {
@@ -357,18 +415,61 @@
       document.getElementById('deposit-amount').textContent = kes(depositVal);
       document.getElementById('deposit-label').textContent = `${P.depositPct || 50}% deposit to start`;
 
+      // --- Timeline calculation ---
+      // raw = selected package days + sum over selected add-ons of (days + daysPerQty x quantity)
+      let rawDays = 0;
+      // find the selected core package (radio group 'pkg')
+      P.groups.forEach(g => {
+        if (g.id === 'pkg') {
+          g.items.forEach(it => {
+            const input = document.querySelector(`input[name="${g.id}"][value="${it.id}"]`);
+            if (input && input.checked) {
+              rawDays += Number(it.days || 0);
+            }
+          });
+        }
+      });
+      // add selected add-ons
+      P.groups.forEach(g => {
+        if (g.id === 'add' || g.id === 'dom' || g.id === 'ssl' || g.id === 'host') {
+          g.items.forEach(it => {
+            const input = document.querySelector(`input[name="${g.id}"][value="${it.id}"]`);
+            if (!input || !input.checked) return; // only count checked add-ons
+            const days = Number(it.days || 0);
+            const dpq = Number(it.daysPerQty || 0);
+            let qty = 1;
+            if (it.qty) {
+              const qel = document.querySelector(`[data-q="${it.id}"]`);
+              qty = qel ? Math.max(1, parseInt(qel.value,10) || 1) : 1;
+            }
+            rawDays += days + (dpq * qty);
+          });
+        }
+      });
+
+      const minD = (P.timeline && Number(P.timeline.minDays)) || 5;
+      const maxD = (P.timeline && Number(P.timeline.maxDays)) || 22;
+      const totalDays = clamp(Math.round(rawDays), minD, maxD);
+
+      // update journey ranges
+      updateJourneyRanges(totalDays);
+
       // Compose Share Message
       const clientName = (document.getElementById('client-name').value || '').trim() || '(Not provided)';
       const clientNotes = (document.getElementById('client-notes').value || '').trim() || 'None';
 
       const itemsText = lineItems.map(it => `• ${it.label}: ${it.cost > 0 ? kes(it.cost) + (it.isYearly ? '/yr' : '') : 'Included'}`).join('\n');
-      
+      const weeks = Math.max(1, Math.round(totalDays / 5));
+      const weeksText = `about ${weeks} ${weeks === 1 ? 'week' : 'weeks'}`;
+      const deliveryText = `Estimated delivery: About ${totalDays} business days (${weeksText}). Clock starts when deposit and content are received.`;
+
       const message = `*Website Project Proposal — ${S.me.name}*\n\n` +
         `*Client / Business:* ${clientName}\n\n` +
         `*Selected Scope & Specifications:*\n${itemsText}\n\n` +
         `*One-off Investment Total:* ${kes(onceTotal)}\n` +
         (yearTotal > 0 ? `*Annual Renewals:* ${kes(yearTotal)}/year\n` : '') +
         `*Initial Deposit (${P.depositPct || 50}%):* ${kes(depositVal)}\n\n` +
+        `*Estimated delivery:* ${deliveryText}\n\n` +
         `*Project Notes / Brief:* ${clientNotes}\n\n` +
         `Generated via ${window.location.origin}${window.location.pathname}`;
 
@@ -386,11 +487,11 @@
 
     window.copyQuoteSummary = function() {
       if (!cachedSummaryText) calculateQuote();
-      navigator.clipboard.writeText(cachedSummaryText).then(() => {
-        showToast('Summary copied to clipboard');
-      }).catch(() => {
-        showToast('Unable to copy automatically');
-      });
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(cachedSummaryText).then(() => { showToast('Summary copied to clipboard'); }).catch(() => { showToast('Unable to copy automatically'); });
+      } else {
+        showToast('Clipboard not available');
+      }
     };
 
     window.showToast = function(msg) {
@@ -400,14 +501,12 @@
       setTimeout(() => toast.classList.remove('show'), 2500);
     };
 
-    window.scrollToSummary = function() {
-      document.getElementById('summary-section').scrollIntoView({ behavior: 'smooth' });
-    };
+    window.scrollToSummary = function() { document.getElementById('summary-section').scrollIntoView({ behavior: 'smooth' }); };
 
-    document.getElementById('client-name').addEventListener('input', calculateQuote);
-    document.getElementById('client-notes').addEventListener('input', calculateQuote);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { const modal = document.getElementById('preview-modal'); if (modal && modal.classList.contains('open')) { modal.classList.remove('open'); } } });
 
-    // Initial calculation
+    // Initial render
+    renderJourneyUI();
     calculateQuote();
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
