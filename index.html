@@ -11,6 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="assets/css/main.css">
+  <!-- Set theme before first paint to prevent flash -->
+  <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');</script>
 </head>
 <body>
 
@@ -227,7 +229,7 @@
 
     // Theme Management
     const themeBtn = document.getElementById('theme-btn');
-    const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const currentTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
 
     themeBtn.addEventListener('click', () => {
