@@ -204,7 +204,10 @@
     <div class="container">
       <div class="footer-bottom">
         <span>&copy; <span id="year">2026</span> <span id="footer-cr-name">Jeremy Serenge</span>. All rights reserved.</span>
-        <a href="../index.html" class="nav-link">Return to Homepage ↗</a>
+        <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+          <a id="footer-email-link" href="mailto:jeremyserenge@gmail.com" class="nav-link">jeremyserenge@gmail.com</a>
+          <a href="../index.html" class="nav-link">Return to Homepage ↗</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -232,6 +235,13 @@
       document.getElementById('site-name').textContent = S.me.name;
       document.getElementById('footer-cr-name').textContent = S.me.name;
       document.title = `Project Investment Estimator | ${S.me.name}`;
+      if (S.me.email) {
+        const emailEl = document.getElementById('footer-email-link');
+        if (emailEl) {
+          emailEl.href = `mailto:${S.me.email}`;
+          emailEl.textContent = S.me.email;
+        }
+      }
     }
 
     // Render Pricing Groups
