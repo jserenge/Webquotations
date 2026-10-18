@@ -132,6 +132,14 @@
                 </div>
               </fieldset>
             </form>
+            <section class="journey-section" id="project-journey" aria-labelledby="journey-title">
+              <div class="journey-header">
+                <div><h3 id="journey-title" class="journey-title">Your project journey</h3>
+                <p class="journey-sub" id="journey-sub">Estimated timeline for your selected scope</p></div>
+                <button type="button" class="btn btn-outline btn-sm" id="journey-toggle-all">Expand all</button>
+              </div>
+              <div id="journey-container" class="journey-list"></div>
+            </section>
           </div>
 
           <!-- Right Column: Sticky Statement of Investment -->
@@ -158,6 +166,7 @@
                 <span id="deposit-label">50% deposit to commence</span>
                 <span id="deposit-amount" style="font-family:var(--font-mono); font-weight:700;">KES 0</span>
               </div>
+              <div class="delivery-row"><span>Estimated delivery</span><span id="delivery-days"></span></div>
             </div>
 
             <div class="quote-btn-stack">
@@ -213,6 +222,7 @@
   </footer>
 
   <script src="../assets/site-data.js"></script>
+  <script src="../assets/timeline.js"></script>
   <script>
     const S = window.SITE;
     const P = S.pricing;
@@ -270,6 +280,7 @@
             <div class="opt-details">
               <span class="opt-label">${it.label}</span>
               ${it.note ? `<span class="opt-note">${it.note}</span>` : ''}
+              ${it.timeframe ? `<span class="opt-timeframe">${it.timeframe}</span>` : ''}
               ${featuresHtml}
             </div>
             <div class="opt-price-col">
@@ -308,6 +319,32 @@
     };
 
     let cachedSummaryText = '';
+
+    function renderJourneyUI() {
+      const c = document.getElementById('journey-container');
+      c.innerHTML = (P.journey || []).map((s, i) => `<details class="journey-stage" data-idx="${i}"${i === 0 ? ' open' : ''}>
+        <summary><span class="journey-num">${i + 1}</span><span class="journey-phase">${s.phase}<small>${s.badge}</small></span><span class="journey-range"></span></summary>
+        <div class="journey-body"><p>${s.summary}</p><ul>${s.steps.map(x => `<li>${x}</li>`).join('')}</ul><p class="journey-deliverable">You receive: <strong>${s.deliverable}</strong></p></div></details>`).join('');
+      const btn = document.getElementById('journey-toggle-all');
+      btn.onclick = () => {
+        const all = Array.from(c.querySelectorAll('details'));
+        const open = all.every(d => d.open);
+        all.forEach(d => d.open = !open);
+        btn.textContent = open ? 'Expand all' : 'Collapse all';
+      };
+    }
+
+    function updateJourney(total) {
+      const days = Timeline.allocateStageDays(total, P.journey);
+      let end = 0;
+      document.querySelectorAll('#journey-container details').forEach((d, i) => {
+        const start = end + 1;
+        end += days[i];
+        d.querySelector('.journey-range').textContent = days[i] === 1 ? `Day ${start}` : `Days ${start} - ${end}`;
+      });
+      document.getElementById('delivery-days').textContent = `${total} business days (${Timeline.weeksText(total)})`;
+      document.getElementById('journey-sub').textContent = Timeline.deliveryLine(total);
+    }
 
     window.calculateQuote = function() {
       let onceTotal = 0;
@@ -357,6 +394,13 @@
       document.getElementById('deposit-amount').textContent = kes(depositVal);
       document.getElementById('deposit-label').textContent = `${P.depositPct || 50}% deposit to start`;
 
+      const totalDays = Timeline.totalDays(P.groups, (gid, iid) => {
+        const i = document.querySelector(`input[name="${gid}"][value="${iid}"]`);
+        const q = document.querySelector(`[data-q="${iid}"]`);
+        return { checked: !!(i && i.checked), qty: q ? Math.max(1, parseInt(q.value, 10) || 1) : 1 };
+      }, P.timeline);
+      updateJourney(totalDays);
+
       // Compose Share Message
       const clientName = (document.getElementById('client-name').value || '').trim() || '(Not provided)';
       const clientNotes = (document.getElementById('client-notes').value || '').trim() || 'None';
@@ -369,6 +413,7 @@
         `*One-off Investment Total:* ${kes(onceTotal)}\n` +
         (yearTotal > 0 ? `*Annual Renewals:* ${kes(yearTotal)}/year\n` : '') +
         `*Initial Deposit (${P.depositPct || 50}%):* ${kes(depositVal)}\n\n` +
+        `${Timeline.deliveryLine(totalDays)}\n\n` +
         `*Project Notes / Brief:* ${clientNotes}\n\n` +
         `Generated via ${window.location.origin}${window.location.pathname}`;
 
@@ -408,6 +453,7 @@
     document.getElementById('client-notes').addEventListener('input', calculateQuote);
 
     // Initial calculation
+    renderJourneyUI();
     calculateQuote();
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
